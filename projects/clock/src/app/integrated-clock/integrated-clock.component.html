@@ -1,0 +1,4 @@
+<p>integrated-clock works!</p>
+<p>{{ datetimeService.now | async | timePipe }}</p>
+<div>Current value : {{mfeService.getValue() | async}}</div>
+<button (click)="onChangeMfeValueBtnPressed()">Set value + 1</button>
