@@ -1,0 +1,9 @@
+<!-- Стоковый HTML -->
+<div class="plugin-container">
+  <p>Plugin value: {{ this.getSomeValue }}</p>
+  <button (click)="changeSomeValue()">Set self value + 1</button>
+  <div>Value from shared service: {{ sharedService.getValue() | async }}</div>
+  <button (click)="onSharedServiceValueBtnPressed()">
+    Set shared value + 1
+  </button>
+</div>
