@@ -1,0 +1,13 @@
+<div class="home-wrapper">
+  <div>Current value : {{ mfeService.getValue() | async }}</div>
+  <button (click)="onChangeMfeValueBtnPressed()">Set value + 1</button>
+  <div class="home-plugins">
+    <div *ngIf="this.isPluginsLoading; else content">Loading...</div>
+    <ng-template #content>
+      <ng-container *ngFor="let p of plugins; let last = last">
+        <plugin-proxy [options]="p"></plugin-proxy>
+        <!-- <i *ngIf="!last" class="arrow right"></i> -->
+      </ng-container>
+    </ng-template>
+  </div>
+</div>

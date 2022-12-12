@@ -1,0 +1,18 @@
+[
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost:4202/remoteEntry.js",
+    "exposedModule": "./Plugin1",
+
+    "displayName": "Plugin1",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost:4202/remoteEntry.js",
+    "exposedModule": "./Plugin1",
+
+    "displayName": "Plugin2",
+    "componentName": "Plugin1Component"
+  }
+]
