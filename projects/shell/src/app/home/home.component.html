@@ -1,6 +1,9 @@
 <div class="home-wrapper">
-  <div>Current value : {{ mfeService.getValue() | async }}</div>
-  <button (click)="onChangeMfeValueBtnPressed()">Set value + 1</button>
+  <div class="home-content">
+    <div>Current shared value : {{ mfeService.getValue() | async }}</div>
+    <button (click)="onChangeMfeValueBtnPressed()">Set value + 1</button>
+  </div>
+
   <div class="home-plugins">
     <div *ngIf="this.isPluginsLoading; else content">Loading...</div>
     <ng-template #content>

@@ -4,7 +4,7 @@
     "remoteEntry": "http://localhost:4202/remoteEntry.js",
     "exposedModule": "./Plugin1",
 
-    "displayName": "Plugin1",
+    "unicDisplayName": "Plugin1",
     "componentName": "Plugin1Component"
   },
   {
@@ -12,7 +12,7 @@
     "remoteEntry": "http://localhost:4202/remoteEntry.js",
     "exposedModule": "./Plugin1",
 
-    "displayName": "Plugin2",
+    "unicDisplayName": "Plugin2",
     "componentName": "Plugin1Component"
   }
 ]

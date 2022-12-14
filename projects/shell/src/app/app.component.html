@@ -2,14 +2,24 @@
   <div class="app-content">
     <nav>
       <li>
-        <a routerLink="/">Home</a>
+        <a
+          class="nav-link"
+          routerLink="/"
+          routerLinkActive="nav-link-active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Home</a
+        >
       </li>
       <li *ngFor="let remote of remotes">
-        <a [routerLink]="remote.routePath">{{ remote.displayName }}</a>
+        <a
+          class="nav-link"
+          routerLinkActive="nav-link-active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          [routerLink]="remote.routePath"
+          >{{ remote.displayName }}</a
+        >
       </li>
     </nav>
-
-    <div>Current shared value : {{ mfeService.getValue() | async }}</div>
   </div>
   <div class="app-outlet">
     <router-outlet></router-outlet>

@@ -1,4 +1,9 @@
 .home {
+  &-content {
+    padding: 1rem 1.25rem;
+    border: 1px dashed #ccc;
+  }
+
   &-plugins {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));

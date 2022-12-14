@@ -13,11 +13,24 @@
         font-size: 1.25rem;
         display: flex;
         column-gap: 0.75rem;
+
+        padding: 1rem 1.25rem;
+
+        border-bottom: 1px solid #ccc;
+
+        .nav-link{
+          color: #ccc;
+
+          &.nav-link-active{
+            color: black;
+          }
+        }
       }
     }
 
     &-outlet {
       margin-top: 0.75rem;
     }
+
   }
 }
