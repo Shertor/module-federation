@@ -143,37 +143,37 @@
 				}
 			}
 		},
-		"clock": {
+		"mfe-module": {
 			"projectType": "application",
 			"schematics": {
 				"@schematics/angular:component": {
 					"style": "scss"
 				}
 			},
-			"root": "projects/clock",
-			"sourceRoot": "projects/clock/src",
+			"root": "projects/mfe-module",
+			"sourceRoot": "projects/mfe-module/src",
 			"prefix": "app",
 			"architect": {
 				"build": {
 					"builder": "ngx-build-plus:browser",
 					"options": {
-						"outputPath": "dist/clock",
-						"index": "projects/clock/src/index.html",
-						"main": "projects/clock/src/main.ts",
+						"outputPath": "dist/mfe-module",
+						"index": "projects/mfe-module/src/index.html",
+						"main": "projects/mfe-module/src/main.ts",
 						"polyfills": [
 							"zone.js"
 						],
-						"tsConfig": "projects/clock/tsconfig.app.json",
+						"tsConfig": "projects/mfe-module/tsconfig.app.json",
 						"inlineStyleLanguage": "scss",
 						"assets": [
-							"projects/clock/src/favicon.ico",
-							"projects/clock/src/assets"
+							"projects/mfe-module/src/favicon.ico",
+							"projects/mfe-module/src/assets"
 						],
 						"styles": [
-							"projects/clock/src/styles.scss"
+							"projects/mfe-module/src/styles.scss"
 						],
 						"scripts": [],
-						"extraWebpackConfig": "projects/clock/webpack.config.js",
+						"extraWebpackConfig": "projects/mfe-module/webpack.config.js",
 						"commonChunk": false
 					},
 					"configurations": {
@@ -191,7 +191,7 @@
 								}
 							],
 							"outputHashing": "all",
-							"extraWebpackConfig": "projects/clock/webpack.prod.config.js"
+							"extraWebpackConfig": "projects/mfe-module/webpack.prod.config.js"
 						},
 						"development": {
 							"buildOptimizer": false,
@@ -208,25 +208,25 @@
 					"builder": "ngx-build-plus:dev-server",
 					"configurations": {
 						"production": {
-							"browserTarget": "clock:build:production",
-							"extraWebpackConfig": "projects/clock/webpack.prod.config.js"
+							"browserTarget": "mfe-module:build:production",
+							"extraWebpackConfig": "projects/mfe-module/webpack.prod.config.js"
 						},
 						"development": {
-							"browserTarget": "clock:build:development"
+							"browserTarget": "mfe-module:build:development"
 						}
 					},
 					"defaultConfiguration": "development",
 					"options": {
 						"port": 4201,
 						"publicHost": "http://localhost:4201",
-						"extraWebpackConfig": "projects/clock/webpack.config.js"
+						"extraWebpackConfig": "projects/mfe-module/webpack.config.js"
 					}
 				},
 				"extract-i18n": {
 					"builder": "ngx-build-plus:extract-i18n",
 					"options": {
-						"browserTarget": "clock:build",
-						"extraWebpackConfig": "projects/clock/webpack.config.js"
+						"browserTarget": "mfe-module:build",
+						"extraWebpackConfig": "projects/mfe-module/webpack.config.js"
 					}
 				},
 				"test": {
@@ -236,14 +236,14 @@
 							"zone.js",
 							"zone.js/testing"
 						],
-						"tsConfig": "projects/clock/tsconfig.spec.json",
+						"tsConfig": "projects/mfe-module/tsconfig.spec.json",
 						"inlineStyleLanguage": "scss",
 						"assets": [
-							"projects/clock/src/favicon.ico",
-							"projects/clock/src/assets"
+							"projects/mfe-module/src/favicon.ico",
+							"projects/mfe-module/src/assets"
 						],
 						"styles": [
-							"projects/clock/src/styles.scss"
+							"projects/mfe-module/src/styles.scss"
 						],
 						"scripts": []
 					}

@@ -4,11 +4,11 @@ const {
 } = require("@angular-architects/module-federation/webpack");
 
 module.exports = withModuleFederationPlugin({
-  name: "clock",
+  name: "mfe-module",
 
   exposes: {
     "./Module":
-      "./projects/clock/src/app/integrated-clock/integrated-clock.module.ts",
+      "./projects/mfe-module/src/app/integrated-clock/integrated-clock.module.ts",
   },
 
   shared: {

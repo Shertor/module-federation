@@ -1,5 +1,5 @@
 {
-  "clock": {
+  "mfe-module": {
     "remoteEntry": "http://localhost:4201/remoteEntry.js",
     "exposedModule": "./Module",
     "displayName": "Clock",
