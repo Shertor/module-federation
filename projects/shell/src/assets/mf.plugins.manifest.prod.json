@@ -1,0 +1,18 @@
+[
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost/mfe-plugins/remoteEntry.js",
+    "exposedModule": "./Plugin1",
+
+    "unicDisplayName": "Plugin1",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost/mfe-plugins/remoteEntry.js",
+    "exposedModule": "./Plugin1",
+
+    "unicDisplayName": "Plugin2",
+    "componentName": "Plugin1Component"
+  }
+]

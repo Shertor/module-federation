@@ -1,9 +1,8 @@
-import {
-  loadManifest,
-  loadRemoteEntry,
-} from "@angular-architects/module-federation";
+import { loadManifest } from "@angular-architects/module-federation";
 
-Promise.all([loadManifest("/assets/mf.manifest.json")])
+import { environment } from "./environments/environment";
+
+Promise.all([loadManifest(environment.modulesFromMainUrl)])
   .catch((err) => console.error(err))
   .then((_) => import("./bootstrap"))
   .catch((err) => console.error(err));

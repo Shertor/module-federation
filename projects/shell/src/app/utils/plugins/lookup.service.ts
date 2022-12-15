@@ -1,11 +1,13 @@
 import { Injectable } from "@angular/core";
+
+import { environment } from "projects/shell/src/environments/environment";
 import { PluginOptions } from "./plugin";
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { catchError, lastValueFrom, Observable, retry, throwError } from "rxjs";
 
 @Injectable({ providedIn: "root" })
 export class LookupService {
-  manifestUrl = "../../assets/mf.plugins.manifest.json";
+  manifestUrl: string = environment.pluginsFromUtilsUrl;
   manifest: PluginOptions[] | undefined;
 
   constructor(private http: HttpClient) {}
