@@ -10,6 +10,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { TopbarComponent } from './components/topbar/topbar.component';
+import { MainComponent } from './components/main/main.component';
 
 @NgModule({
   imports: [
@@ -19,7 +20,7 @@ import { TopbarComponent } from './components/topbar/topbar.component';
     HomeComponent,
     HttpClientModule,
   ],
-  declarations: [AppComponent, NavigationComponent, FooterComponent, TopbarComponent],
+  declarations: [AppComponent, NavigationComponent, FooterComponent, TopbarComponent, MainComponent],
   providers: [],
   bootstrap: [AppComponent],
 })
