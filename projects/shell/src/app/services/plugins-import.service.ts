@@ -9,15 +9,13 @@ import { PluginOptions } from "../utils/plugins/plugin";
 @Injectable({
   providedIn: "root",
 })
-export class PluginsImportService implements OnInit {
+export class PluginsImportService {
   /** Флаг состояния загрузки плагинов */
   public loading$: BehaviorSubject<boolean> = new BehaviorSubject(true);
   /** Список всех плагинов из манифеста*/
   private plugins: PluginOptions[] = [];
 
-  constructor(private lookupService: LookupService) {}
-
-  ngOnInit(): void {
+  constructor(private lookupService: LookupService) {
     this.loadManifest();
   }
 
