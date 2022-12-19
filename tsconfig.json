@@ -23,6 +23,10 @@
       "@shared/*": [
         "projects/shared/src/public-api.ts",
         "dist/shared"
+      ],
+      "@styleguide": [
+        "projects/styleguide-lib/src/public-api.ts",
+        "dist/styleguide-lib"
       ]
     },
     "target": "ES2022",

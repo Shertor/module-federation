@@ -4,6 +4,8 @@
     <button (click)="onChangeMfeValueBtnPressed()">Set value + 1</button>
   </div>
 
+  <lib-styleguide-lib></lib-styleguide-lib>
+
   <div class="home-plugins">
     <div *ngIf="this.isPluginsLoading; else content">Loading...</div>
     <ng-template #content>

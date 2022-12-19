@@ -1,6 +1,9 @@
 import { CommonModule } from "@angular/common";
 import { Component, OnInit } from "@angular/core";
+
 import { MfeShellExampleService } from "@shared";
+import { StyleguideLibComponent } from "@styleguide"
+
 import { LookupService } from "../utils/plugins/lookup.service";
 import { PluginOptions } from "../utils/plugins/plugin";
 import { PluginProxyComponent } from "../utils/plugins/plugin-proxy.component";
@@ -10,7 +13,7 @@ import { PluginProxyComponent } from "../utils/plugins/plugin-proxy.component";
   templateUrl: "./home.component.html",
   styleUrls: ["./home.component.scss"],
   standalone: true,
-  imports: [PluginProxyComponent, CommonModule],
+  imports: [CommonModule, PluginProxyComponent, StyleguideLibComponent],
 })
 export class HomeComponent implements OnInit {
   public plugins: PluginOptions[] = [];
