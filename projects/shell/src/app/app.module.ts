@@ -7,6 +7,7 @@ import { AppComponent } from "./app.component";
 import { HomeComponent } from "./home/home.component";
 import { PluginProxyComponent } from "./utils/plugins/plugin-proxy.component";
 import { HttpClientModule } from "@angular/common/http";
+import { NavigationComponent } from './components/navigation/navigation.component';
 
 @NgModule({
   imports: [
@@ -16,7 +17,7 @@ import { HttpClientModule } from "@angular/common/http";
     HomeComponent,
     HttpClientModule,
   ],
-  declarations: [AppComponent],
+  declarations: [AppComponent, NavigationComponent],
   providers: [],
   bootstrap: [AppComponent],
 })
