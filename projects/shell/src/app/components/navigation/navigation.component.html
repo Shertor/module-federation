@@ -1,1 +1,34 @@
-<p>navigation works!</p>
+<div class="nav-wrapper">
+  <h1>Навигация</h1>
+  <div class="nav-pages">
+    <h3>Панели</h3>
+    <li *ngFor="let remote of this.modulesService.remotes">
+      <a
+        class="nav-link"
+        routerLink="/"
+        routerLinkActive="nav-link-active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Главная</a
+      >
+    </li>
+  </div>
+  <hr />
+  <div class="nav-modules">
+    <h3>Модули</h3>
+    <li *ngFor="let remote of this.modulesService.remotes">
+      <a
+        class="nav-link"
+        routerLinkActive="nav-link-active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        [routerLink]="remote.routePath"
+        >{{ remote.displayName }}</a
+      >
+    </li>
+  </div>
+  <hr />
+  <div class="nav-additional">
+    <li>
+      <a class="nav-link">Параметры</a>
+    </li>
+  </div>
+</div>
