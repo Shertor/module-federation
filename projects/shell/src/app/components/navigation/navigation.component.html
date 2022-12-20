@@ -1,33 +1,43 @@
 <div class="nav-wrapper">
-  <div class="nav-pages">
-    <h3>Панели</h3>
-    <li *ngFor="let remote of this.modulesService.remotes">
-      <a
-        class="nav-link"
-        routerLink="/"
-        routerLinkActive="nav-link-active"
-        [routerLinkActiveOptions]="{ exact: true }"
-        >Главная</a
-      >
-    </li>
-  </div>
-  <hr />
-  <div class="nav-modules">
-    <h3>Модули</h3>
-    <li *ngFor="let remote of this.modulesService.remotes">
-      <a
-        class="nav-link"
-        routerLinkActive="nav-link-active"
-        [routerLinkActiveOptions]="{ exact: true }"
-        [routerLink]="remote.routePath"
-        >{{ remote.displayName }}</a
-      >
-    </li>
-  </div>
-  <hr />
-  <div class="nav-additional">
-    <li>
-      <a class="nav-link">Параметры</a>
-    </li>
+  <div class="nav-drawer"></div>
+
+  <div class="nav-content">
+    <div class="nav-pages">
+      <div class="label label-large nav-title">Панели</div>
+      <div>
+        <a
+          class="label label-large nav-link"
+          routerLink="/"
+          routerLinkActive="nav-link-active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Главная</a
+        >
+      </div>
+    </div>
+    <div class="nav-hr"></div>
+    <div class="nav-modules">
+      <div class="label label-large nav-title">Модули</div>
+      <div *ngFor="let remote of this.modulesService.remotes">
+        <a
+          class="label label-large nav-link"
+          routerLinkActive="nav-link-active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          [routerLink]="remote.routePath"
+          >{{ remote.displayName }}</a
+        >
+      </div>
+    </div>
+    <div class="nav-hr"></div>
+    <div class="nav-additional">
+      <div>
+        <a
+          class="label label-large nav-link"
+          routerLinkActive="nav-link-active"
+          routerLink="/settings"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Параметры</a
+        >
+      </div>
+    </div>
   </div>
 </div>
