@@ -11,7 +11,7 @@ import { PluginOptions } from "../utils/plugins/plugin";
 })
 export class PluginsImportService {
   /** Флаг состояния загрузки плагинов */
-  public loading$: BehaviorSubject<boolean> = new BehaviorSubject(true);
+  public loading$: BehaviorSubject<boolean> = new BehaviorSubject(false);
   /** Список всех плагинов из манифеста*/
   private plugins: PluginOptions[] = [];
 
@@ -20,19 +20,19 @@ export class PluginsImportService {
   }
 
   /** Функция для загрузки манифеста */
-  private loadManifest(): void {
+  private async loadManifest(): Promise<void> {
     if (this.loading) return;
 
     this.loading$.next(true);
     this.lookupService.lookup().then((plugins) => {
-      this.loading$.next(false);
       this.plugins = plugins;
+      this.loading$.next(false);
     });
   }
 
   /** Функция для обновления манифеста */
-  public update(): void {
-    this.loadManifest();
+  public async update(): Promise<void> {
+    await this.loadManifest();
   }
 
   /** Геттер для флага состояния загрузки плагинов*/
