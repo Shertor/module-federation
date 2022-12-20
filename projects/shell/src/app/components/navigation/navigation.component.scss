@@ -103,15 +103,29 @@
       svg {
         fill: var(--color-on-surface-variant);
       }
+
+      &.module-icon {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: var(--color-on-surface-variant);
+      }
     }
 
     &:hover {
       color: var(--color-primary);
       background-color: var(--color-surface-2);
 
-      svg {
+      svg,
+      .module-icon {
         transform: scale(1.05);
+      }
+      svg {
         fill: var(--color-primary);
+      }
+
+      .module-icon {
+        background-color: var(--color-primary);
       }
     }
     &:focus-visible,
@@ -119,9 +133,16 @@
       color: var(--color-primary);
       background-color: var(--color-surface-3);
 
-      svg {
+      svg,
+      .module-icon {
         transform: scale(0.95);
+      }
+      svg,
+      .module-icon {
         fill: var(--color-primary);
+      }
+      .module-icon {
+        background-color: var(--color-primary);
       }
     }
 
@@ -135,12 +156,18 @@
         svg {
           fill: var(--color-on-surface);
         }
+        .module-icon {
+          background-color: var(--color-on-surface);
+        }
       }
       &:focus-visible,
       &:active {
         background: var(--color-on-surface-4);
         svg {
           fill: var(--color-on-surface);
+        }
+        .module-icon {
+          background-color: var(--color-on-surface);
         }
       }
     }
