@@ -1,0 +1,14 @@
+<div *ngIf="!this.state; then open; else close">
+  here is ignored
+</div>
+<ng-template #open
+  ><button class="menu" (click)="this.btnClose()">
+    <div class="menu__line"></div>
+    <div class="menu__line"></div>
+    <div class="menu__line"></div></button
+></ng-template>
+<ng-template #close
+  ><button class="menu close" (click)="this.btnOpen()">
+    <div class="menu__line"></div>
+    <div class="menu__line"></div></button
+></ng-template>

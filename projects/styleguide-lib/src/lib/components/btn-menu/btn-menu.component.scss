@@ -1,0 +1,48 @@
+.menu {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  row-gap: 0.25rem;
+  cursor: pointer;
+
+  width: 48px;
+  height: 48px;
+
+  margin-left: var(--pd-0-5);
+  @media screen and (max-width: 768px) {
+    margin-left: 0;
+  }
+
+  border-radius: 50%;
+
+  &:hover {
+    background-color: var(--color-surface-2);
+  }
+
+  &:active {
+    color: var(--color-primary);
+    background-color: var(--color-surface-4);
+  }
+
+  .menu__line {
+    width: 50%;
+    height: 2px;
+    background-color: var(--color-on-surface-variant);
+    border-radius: 9999rem;
+  }
+
+  @media screen and (max-width: 599px) {
+    display: flex;
+  }
+
+  &.close {
+    .menu__line:first-child {
+      transform: translatey(3px) rotate(45deg);
+    }
+    .menu__line:last-child {
+      transform: translatey(-3px) rotate(-45deg);
+    }
+  }
+}
