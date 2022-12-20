@@ -4,24 +4,29 @@ import { RouterModule } from "@angular/router";
 
 import { APP_ROUTES } from "./app.routes";
 import { AppComponent } from "./app.component";
-import { HomeComponent } from "./home/home.component";
 import { PluginProxyComponent } from "./utils/plugins/plugin-proxy.component";
 import { HttpClientModule } from "@angular/common/http";
-import { NavigationComponent } from './components/navigation/navigation.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { TopbarComponent } from './components/topbar/topbar.component';
-import { MainComponent } from './components/main/main.component';
-import { GeneralPageComponent } from './components/pages/general-page/general-page.component';
+import { NavigationComponent } from "./components/navigation/navigation.component";
+import { FooterComponent } from "./components/footer/footer.component";
+import { TopbarComponent } from "./components/topbar/topbar.component";
+import { MainComponent } from "./components/main/main.component";
+import { GeneralPageComponent } from "./components/pages/general-page/general-page.component";
 
 @NgModule({
   imports: [
     BrowserModule,
     RouterModule.forRoot(APP_ROUTES),
     PluginProxyComponent,
-    HomeComponent,
     HttpClientModule,
   ],
-  declarations: [AppComponent, NavigationComponent, FooterComponent, TopbarComponent, MainComponent, GeneralPageComponent],
+  declarations: [
+    AppComponent,
+    NavigationComponent,
+    FooterComponent,
+    TopbarComponent,
+    MainComponent,
+    GeneralPageComponent,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
