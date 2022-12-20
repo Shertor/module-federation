@@ -1,5 +1,170 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import "./assets/styles/fonts.scss";
+
+:root {
+  --z-tooltip: 10;
+  --z-fixed: 100;
+
+  // FONTS
+  --body-font: "Roboto", "OpenSans", "Playfair", serif;
+  --body-font-bold: "RobotoMedium", "OpenSans", "Playfair", serif;
+
+  --big-font-size: 3.5rem;
+
+  --h1-font-size: 2rem;
+  --h2-font-size: 1.75rem;
+  --h3-font-size: 1.5rem;
+
+  --label-small-font-size: 0.6875rem; // 11px
+
+  --normal-font-size: 1rem; // 16px
+  --small-font-size: 0.875rem; // 14px
+  --smaller-font-size: 0.75rem; // 12px
+
+  // PADDINGS AND GAPS
+  --pd-0-5: 0.5rem;
+  --pd-0-75: 0.75rem;
+  --pd-1: 1rem;
+  --pd-1-25: 1.25rem;
+  --pd-1-5: 1.5rem;
+  --pd-2: 2rem;
+  --pd-2-5: 2.5rem;
+
+  --column-gap-1-5: 1.5rem;
+  --column-gap-1-05: 1.05rem;
+
+  --row-gap-1-5: 1.5rem;
+  --row-gap-0-65: 0.65rem;
+
+  // STANDART BORDER-RADIUS
+  --br-standart: 12px;
+
+  // APP SIZES
+  --sidebar-width: 80px;
+  --app-max-width: 1920px;
+  --app-tablet-width: 768px;
+  --footer-height: 3rem;
+
+  /* display - large */
+  --typescale-display-large-font-family-name: var(--body-font);
+  --typescale-display-large-font-family-style: Regular;
+  --typescale-display-large-font-weight: 400px;
+  --typescale-display-large-font-size: 57px;
+  --typescale-display-large-line-height: 64px;
+  --typescale-display-large-letter-spacing: -0.25px;
+  /* display - medium */
+  --typescale-display-medium-font-family-name: var(--body-font);
+  --typescale-display-medium-font-family-style: Regular;
+  --typescale-display-medium-font-weight: 400px;
+  --typescale-display-medium-font-size: 45px;
+  --typescale-display-medium-line-height: 52px;
+  --typescale-display-medium-letter-spacing: 0px;
+  /* display - small */
+  --typescale-display-small-font-family-name: var(--body-font);
+  --typescale-display-small-font-family-style: Regular;
+  --typescale-display-small-font-weight: 400px;
+  --typescale-display-small-font-size: 36px;
+  --typescale-display-small-line-height: 44px;
+  --typescale-display-small-letter-spacing: 0px;
+  /* headline - large */
+  --typescale-headline-large-font-family-name: var(--body-font);
+  --typescale-headline-large-font-family-style: Regular;
+  --typescale-headline-large-font-weight: 400px;
+  --typescale-headline-large-font-size: 32px;
+  --typescale-headline-large-line-height: 40px;
+  --typescale-headline-large-letter-spacing: 0px;
+  /* headline - medium */
+  --typescale-headline-medium-font-family-name: var(--body-font);
+  --typescale-headline-medium-font-family-style: Regular;
+  --typescale-headline-medium-font-weight: 400px;
+  --typescale-headline-medium-font-size: 28px;
+  --typescale-headline-medium-line-height: 36px;
+  --typescale-headline-medium-letter-spacing: 0px;
+  /* headline - small */
+  --typescale-headline-small-font-family-name: var(--body-font);
+  --typescale-headline-small-font-family-style: Regular;
+  --typescale-headline-small-font-weight: 400px;
+  --typescale-headline-small-font-size: 24px;
+  --typescale-headline-small-line-height: 32px;
+  --typescale-headline-small-letter-spacing: 0px;
+  /* body - large */
+  --typescale-body-large-font-family-name: var(--body-font);
+  --typescale-body-large-font-family-style: Regular;
+  --typescale-body-large-font-weight: 400px;
+  --typescale-body-large-font-size: 16px;
+  --typescale-body-large-line-height: 24px;
+  --typescale-body-large-letter-spacing: 0.5px;
+  /* body - medium */
+  --typescale-body-medium-font-family-name: var(--body-font);
+  --typescale-body-medium-font-family-style: Regular;
+  --typescale-body-medium-font-weight: 400px;
+  --typescale-body-medium-font-size: 14px;
+  --typescale-body-medium-line-height: 20px;
+  --typescale-body-medium-letter-spacing: 0.25px;
+  /* body - small */
+  --typescale-body-small-font-family-name: var(--body-font);
+  --typescale-body-small-font-family-style: Regular;
+  --typescale-body-small-font-weight: 400px;
+  --typescale-body-small-font-size: 12px;
+  --typescale-body-small-line-height: 16px;
+  --typescale-body-small-letter-spacing: 0.4px;
+  /* label - large */
+  --typescale-label-large-font-family-name: var(--body-font-bold);
+  --typescale-label-large-font-family-style: Medium;
+  --typescale-label-large-font-weight: 500px;
+  --typescale-label-large-font-size: 14px;
+  --typescale-label-large-line-height: 20px;
+  --typescale-label-large-letter-spacing: 0.1px;
+  /* label - medium */
+  --typescale-label-medium-font-family-name: var(--body-font-bold);
+  --typescale-label-medium-font-family-style: Medium;
+  --typescale-label-medium-font-weight: 500px;
+  --typescale-label-medium-font-size: 12px;
+  --typescale-label-medium-line-height: 16px;
+  --typescale-label-medium-letter-spacing: 0.5px;
+  /* label - small */
+  --typescale-label-small-font-family-name: var(--body-font-bold);
+  --typescale-label-small-font-family-style: Medium;
+  --typescale-label-small-font-weight: 500px;
+  --typescale-label-small-font-size: 11px;
+  --typescale-label-small-line-height: 16px;
+  --typescale-label-small-letter-spacing: 0.5px;
+  /* title - large */
+  --typescale-title-large-font-family-name: var(--body-font);
+  --typescale-title-large-font-family-style: Regular;
+  --typescale-title-large-font-weight: 400px;
+  --typescale-title-large-font-size: 22px;
+  --typescale-title-large-line-height: 28px;
+  --typescale-title-large-letter-spacing: 0px;
+  /* title - medium */
+  --typescale-title-medium-font-family-name: var(--body-font-bold);
+  --typescale-title-medium-font-family-style: Medium;
+  --typescale-title-medium-font-weight: 500px;
+  --typescale-title-medium-font-size: 16px;
+  --typescale-title-medium-line-height: 24px;
+  --typescale-title-medium-letter-spacing: 0.15px;
+  /* title - small */
+  --typescale-title-small-font-family-name: var(--body-font-bold);
+  --typescale-title-small-font-family-style: Medium;
+  --typescale-title-small-font-weight: 500px;
+  --typescale-title-small-font-size: 14px;
+  --typescale-title-small-line-height: 20px;
+  --typescale-title-small-letter-spacing: 0.1px;
+}
+
+// Для этапа разработки и выбора темы иморт осуществляется через задание имени класса для app.component
+@import "./assets/styles/tokens.sib.scss";
+
+@import "./assets/styles/tokens.sib-dark.scss";
+
+@import "./assets/styles/tokens.alt-1.scss";
+
+@import "./assets/styles/tokens.alt-2.scss";
+
+@import "./assets/styles/typography.module.scss";
+
+// Общее
 *,
 *::after,
 ::before {
@@ -22,20 +187,24 @@ input,
 textarea {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
-  //   -webkit-appearance: none;
 }
 
 button {
   cursor: pointer;
+  border: none;
+  background-color: transparent;
 }
 
-ul,
-li {
+ul {
   list-style: none;
 }
 
 a {
-  font-family: inherit;
+  font-family: var(--body-font);
   text-decoration: none;
-  color: inherit;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }

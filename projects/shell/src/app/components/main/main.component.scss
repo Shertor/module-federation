@@ -1,0 +1,101 @@
+/* Враппер всего контента в компоненте */
+.main {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  // Topbar router-outlet Page Footer
+  // 0px высота router-outlet чтобы избежать
+  grid-template-rows: min-content 0px 1fr min-content;
+
+  max-width: var(--app-max-width);
+  min-height: 100%; // Сдвигает футер вниз
+
+  margin: 0 auto;
+  padding: var(--pd-1-25) var(--pd-2);
+
+  background-color: var(--color-surface);
+
+  /* Враппер верхней части для работы position: sticky;*/
+  .topbar-wrapper {
+    position: sticky;
+    top: 0;
+    left: 0;
+
+    z-index: calc(var(--z-fixed) - 1);
+
+    display: flex;
+    align-items: center;
+
+    padding: 8px 12px;
+
+    background-color: var(--color-surface);
+  }
+
+  @media screen and (max-width: 599px) {
+    padding: var(--pd-0-5) var(--pd-0-75);
+  }
+}
+
+.main-container {
+  position: relative;
+
+  min-width: 100%;
+  min-height: 100%;
+  height: fit-content;
+
+  gap: 1rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  flex-flow: row wrap;
+
+  .main-title {
+    width: 100%;
+    flex-grow: 1;
+  }
+
+  .main-card {
+    background-color: var(--color-surface);
+    height: 300px;
+    min-width: 275px;
+
+    border-radius: var(--br-standart);
+    border: none;
+
+    isolation: isolate;
+
+    &.card-outlined {
+      border: 1px solid var(--color-outline);
+    }
+    &.card-elevated {
+      background-color: var(--color-surface-1);
+      box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3),
+        0px 2px 6px 0px rgba(0, 0, 0, 0.15);
+    }
+    &.card-filled {
+      background-color: var(--color-surface-1);
+
+      &-info {
+        background-color: var(--color-tertiary-container);
+      }
+    }
+  }
+
+  .card-1-2 {
+    flex: 1 1 calc(50% - 1rem);
+  }
+
+  .card-1-4 {
+    flex: 1 1 calc(25% - 1rem);
+  }
+
+  .card-1 {
+    flex: 1 1 100%;
+  }
+
+  .card-fill {
+    flex: 999 1 0%;
+  }
+}

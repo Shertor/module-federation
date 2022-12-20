@@ -1,0 +1,56 @@
+.alt-2 {
+  --source: #006b5a;
+
+  --color-primary: #006b5a;
+  --palette-primary95: #b7ffeb;
+  --color-primary-rgb: 0 107 89;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #7af8db;
+  --color-on-primary-container: #00201a;
+  --color-secondary: #4b635c;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #cde8df;
+  --color-on-secondary-container: #06201a;
+  --color-tertiary: #426278;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #c7e7ff;
+  --color-on-tertiary-container: #001e2e;
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+  --color-on-error: #ffffff;
+  --color-on-error-container: #410002;
+  --color-background: #fafdfa;
+  --color-on-background: #191c1b;
+  --color-surface: #fafdfa;
+  --color-on-surface: #191c1b;
+  --color-surface-variant: #dbe5e0;
+  --color-on-surface-variant: #3f4946;
+  --color-outline: #6f7975;
+  --color-inverse-on-surface: #eff1ef;
+  --color-inverse-surface: #2e3130;
+  --color-inverse-primary: #5adbbf;
+  --color-shadow: #000000;
+  --color-surface-tint: #006b5a;
+  --color-outline-variant: #bfc9c4;
+  --color-scrim: #000000;
+
+  --color-surface-1: rgb(var(--color-primary-rgb) / 0.05);
+  --color-surface-2: rgb(var(--color-primary-rgb) / 0.08);
+  --color-surface-3: rgb(var(--color-primary-rgb) / 0.11);
+  --color-surface-4: rgb(var(--color-primary-rgb) / 0.12);
+  --color-surface-5: rgb(var(--color-primary-rgb) / 0.14);
+
+  --color-on-surface: rgba(11, 31, 26, 1);
+  --color-on-surface-2: linear-gradient(
+      0deg,
+      rgba(11, 31, 26, 0.08),
+      rgba(11, 31, 26, 0.08)
+    ),
+    var(--color-secondary-container);
+  --color-on-surface-4: linear-gradient(
+      0deg,
+      rgba(11, 31, 26, 0.12),
+      rgba(11, 31, 26, 0.12)
+    ),
+    var(--color-secondary-container);
+}
