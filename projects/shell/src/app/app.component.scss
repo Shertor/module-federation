@@ -1,36 +1,20 @@
-.wrapper {
+.container {
+  // max-width: var(--app-max-width);
+  position: relative;
+
   margin: 0 auto;
-  padding: 1rem 1.5rem;
+  width: 100%;
 
-  .app {
-    &-content {
-      display: flex;
-      flex-direction: column;
-      row-gap: 0.75rem;
+  min-height: 600px;
+  height: fit-content;
 
-      nav {
-        font-weight: 500;
-        font-size: 1.25rem;
-        display: flex;
-        column-gap: 0.75rem;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: min-content 1fr;
 
-        padding: 1rem 1.25rem;
+  min-height: 100vh;
 
-        border-bottom: 1px solid #ccc;
+  color: var(--color-on-background);
 
-        .nav-link{
-          color: #ccc;
-
-          &.nav-link-active{
-            color: black;
-          }
-        }
-      }
-    }
-
-    &-outlet {
-      margin-top: 0.75rem;
-    }
-
-  }
+  background-color: var(--color-surface);
 }

@@ -11,6 +11,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { FooterComponent } from './components/footer/footer.component';
 import { TopbarComponent } from './components/topbar/topbar.component';
 import { MainComponent } from './components/main/main.component';
+import { GeneralPageComponent } from './components/pages/general-page/general-page.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,7 @@ import { MainComponent } from './components/main/main.component';
     HomeComponent,
     HttpClientModule,
   ],
-  declarations: [AppComponent, NavigationComponent, FooterComponent, TopbarComponent, MainComponent],
+  declarations: [AppComponent, NavigationComponent, FooterComponent, TopbarComponent, MainComponent, GeneralPageComponent],
   providers: [],
   bootstrap: [AppComponent],
 })

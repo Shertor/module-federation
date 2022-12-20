@@ -1,11 +1,12 @@
 import { Routes } from "@angular/router";
+import { GeneralPageComponent } from "./components/pages/general-page/general-page.component";
 import { HomeComponent } from "./home/home.component";
 // import { loadRemoteModule } from "@angular-architects/module-federation";
 
 export const APP_ROUTES: Routes = [
   {
     path: "",
-    component: HomeComponent,
+    component: GeneralPageComponent,
     pathMatch: "full",
   },
   // {

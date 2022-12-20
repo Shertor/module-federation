@@ -1,1 +1,12 @@
-<p>general-page works!</p>
+<div class="main-container">
+  <div class="headline-large main-title">Главная</div>
+  <div *ngIf="this.pluginsService.loading; else content">Loading...</div>
+  <ng-template #content>
+    <ng-container *ngFor="let p of plugins; let last = last">
+      <plugin-proxy [options]="p"></plugin-proxy>
+      <!-- <i *ngIf="!last" class="arrow right"></i> -->
+    </ng-container>
+  </ng-template>
+
+  <!-- <button (click)="this.pluginsService.update()">Update</button> -->
+</div>
