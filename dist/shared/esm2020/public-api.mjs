@@ -1,0 +1,7 @@
+/*
+ * Public API Surface of shared
+ */
+export * from "./lib/datetime.service";
+export * from "./lib/datetime.pipe";
+export * from "./lib/mfe-shell-example.service";
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljLWFwaS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3Byb2plY3RzL3NoYXJlZC9zcmMvcHVibGljLWFwaS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7R0FFRztBQUVILGNBQWMsd0JBQXdCLENBQUM7QUFDdkMsY0FBYyxxQkFBcUIsQ0FBQztBQUNwQyxjQUFjLGlDQUFpQyxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiLypcbiAqIFB1YmxpYyBBUEkgU3VyZmFjZSBvZiBzaGFyZWRcbiAqL1xuXG5leHBvcnQgKiBmcm9tIFwiLi9saWIvZGF0ZXRpbWUuc2VydmljZVwiO1xuZXhwb3J0ICogZnJvbSBcIi4vbGliL2RhdGV0aW1lLnBpcGVcIjtcbmV4cG9ydCAqIGZyb20gXCIuL2xpYi9tZmUtc2hlbGwtZXhhbXBsZS5zZXJ2aWNlXCI7XG4iXX0=

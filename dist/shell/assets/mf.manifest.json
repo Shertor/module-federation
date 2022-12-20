@@ -1,0 +1,9 @@
+{
+  "mfe-module": {
+    "remoteEntry": "http://localhost:4201/remoteEntry.js",
+    "exposedModule": "./Module",
+    "displayName": "Clock",
+    "routePath": "clock",
+    "ngModuleName": "IntegratedClockModule"
+  }
+}
