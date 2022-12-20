@@ -1,7 +1,8 @@
-import { Component, OnInit } from "@angular/core";
-import { MfeShellExampleService } from "@shared";
-import { ModulesImportService } from "./services/modules-import.service";
-import { CustomRemoteConfig } from "./utils/config";
+import { Component, OnInit, ViewChild } from "@angular/core"
+import { Subject, takeUntil } from "rxjs"
+
+import { NavigationComponent } from "./components/navigation/navigation.component"
+import { TopbarComponent } from "./components/topbar/topbar.component"
 
 @Component({
   selector: "app-root",
@@ -9,18 +10,22 @@ import { CustomRemoteConfig } from "./utils/config";
   styleUrls: ["./app.component.scss"],
 })
 export class AppComponent implements OnInit {
-  title = "shell";
+  /**
+   * Сабжект, позволяющий при помощи pipe(takeUntil(this.ngUnsubscribe))
+   *  затем отписаться от всех подписок
+   */
+  private ngUnsubscribe = new Subject<void>()
 
-  remotes: CustomRemoteConfig[] = [];
+  /** Необходим для отслеживания событий Topbar и передачи их в другие компоненты */
+  // @ViewChild(TopbarComponent)
+  // private topbarComponent!: TopbarComponent
 
-  constructor(
-    public mfeService: MfeShellExampleService,
-    public modulesService: ModulesImportService
-  ) {}
+  constructor() {}
 
-  async ngOnInit(): Promise<void> {
-    console.log("app init");
+  ngOnInit(): void {}
 
-    this.remotes = this.modulesService.remotes;
+  ngOnDestroy() {
+    this.ngUnsubscribe.next()
+    this.ngUnsubscribe.complete()
   }
 }

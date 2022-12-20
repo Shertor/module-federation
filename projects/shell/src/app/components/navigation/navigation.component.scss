@@ -213,9 +213,6 @@
       z-index: var(--z-fixed);
       opacity: 1;
 
-      border-top-right-radius: 16px;
-      border-bottom-right-radius: 16px;
-
       &.show {
         display: flex;
 
@@ -228,6 +225,9 @@
 
     &-content {
       background-color: var(--palette-primary95);
+
+      border-top-right-radius: 16px;
+      border-bottom-right-radius: 16px;
     }
   }
 }

@@ -1,5 +1,8 @@
-<div class="nav-wrapper">
-  <div class="nav-drawer"></div>
+<div
+  class="nav-wrapper"
+  [ngClass]="{ show: this.navigationService.isVisible$.getValue() }"
+>
+  <div class="nav-drawer" (click)="this.navigationService.close()"></div>
 
   <div class="nav-content">
     <div class="nav-pages">
@@ -10,6 +13,7 @@
           routerLink="/"
           routerLinkActive="nav-link-active"
           [routerLinkActiveOptions]="{ exact: true }"
+          (click)="this.navigationService.close()"
           ><div class="link-img">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -35,6 +39,7 @@
           routerLinkActive="nav-link-active"
           [routerLinkActiveOptions]="{ exact: true }"
           [routerLink]="remote.routePath"
+          (click)="this.navigationService.close()"
           ><div class="link-img module-icon"></div>
           {{ remote.displayName }}</a
         >
@@ -48,6 +53,7 @@
           routerLinkActive="nav-link-active"
           routerLink="/settings"
           [routerLinkActiveOptions]="{ exact: true }"
+          (click)="this.navigationService.close()"
           ><div class="link-img">
             <svg
               xmlns="http://www.w3.org/2000/svg"

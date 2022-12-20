@@ -12,12 +12,15 @@ import { TopbarComponent } from "./components/topbar/topbar.component";
 import { MainComponent } from "./components/main/main.component";
 import { GeneralPageComponent } from "./components/pages/general-page/general-page.component";
 
+import { BtnMenuComponent } from 'projects/styleguide-lib/src/lib/components/btn-menu/btn-menu.component';
+
 @NgModule({
   imports: [
     BrowserModule,
     RouterModule.forRoot(APP_ROUTES),
     PluginProxyComponent,
     HttpClientModule,
+    BtnMenuComponent
   ],
   declarations: [
     AppComponent,
@@ -25,7 +28,7 @@ import { GeneralPageComponent } from "./components/pages/general-page/general-pa
     FooterComponent,
     TopbarComponent,
     MainComponent,
-    GeneralPageComponent,
+    GeneralPageComponent
   ],
   providers: [],
   bootstrap: [AppComponent],
