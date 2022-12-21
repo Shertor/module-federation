@@ -43,3 +43,7 @@ Thumbs.db
 
 # VS Code
 .vscode
+
+
+# Testing
+.msedge/
