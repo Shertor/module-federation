@@ -14,5 +14,149 @@
 
     "unicDisplayName": "Plugin2",
     "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost:4202/remoteEntry.js",
+    "exposedModule": "./Plugin1",
+
+    "unicDisplayName": "Plugin3",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost:4202/remoteEntry.js",
+    "exposedModule": "./Plugin1",
+
+    "unicDisplayName": "Plugin4",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost:4202/remoteEntry.js",
+    "exposedModule": "./Plugin1",
+
+    "unicDisplayName": "Plugin5",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost:4202/remoteEntry.js",
+    "exposedModule": "./Plugin1",
+
+    "unicDisplayName": "Plugin6",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost:4202/remoteEntry.js",
+    "exposedModule": "./Plugin1",
+
+    "unicDisplayName": "Plugin7",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost:4202/remoteEntry.js",
+    "exposedModule": "./Plugin1",
+
+    "unicDisplayName": "Plugin8",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost:4202/remoteEntry.js",
+    "exposedModule": "./Plugin1",
+
+    "unicDisplayName": "Plugin9",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost:4202/remoteEntry.js",
+    "exposedModule": "./Plugin1",
+
+    "unicDisplayName": "Plugin10",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost:4202/remoteEntry.js",
+    "exposedModule": "./Plugin1",
+
+    "unicDisplayName": "Plugin11",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost:4202/remoteEntry.js",
+    "exposedModule": "./Plugin1",
+
+    "unicDisplayName": "Plugin12",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost:4202/remoteEntry.js",
+    "exposedModule": "./Plugin1",
+
+    "unicDisplayName": "Plugin13",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost:4202/remoteEntry.js",
+    "exposedModule": "./Plugin1",
+
+    "unicDisplayName": "Plugin14",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost:4202/remoteEntry.js",
+    "exposedModule": "./Plugin1",
+
+    "unicDisplayName": "Plugin15",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost:4202/remoteEntry.js",
+    "exposedModule": "./Plugin1",
+
+    "unicDisplayName": "Plugin16",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost:4202/remoteEntry.js",
+    "exposedModule": "./Plugin1",
+
+    "unicDisplayName": "Plugin17",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost:4202/remoteEntry.js",
+    "exposedModule": "./Plugin1",
+
+    "unicDisplayName": "Plugin18",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost:4202/remoteEntry.js",
+    "exposedModule": "./Plugin1",
+
+    "unicDisplayName": "Plugin19",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost:4202/remoteEntry.js",
+    "exposedModule": "./Plugin1",
+
+    "unicDisplayName": "Plugin20",
+    "componentName": "Plugin1Component"
   }
 ]
