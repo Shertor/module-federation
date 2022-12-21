@@ -5,6 +5,9 @@
   <div class="nav-drawer" (click)="this.navigationService.close()"></div>
 
   <div class="nav-content">
+
+    <lib-btn-menu [state]="this.navigationService.visible?'toClose':'toOpen'" (closed)="this.navigationService.close()"></lib-btn-menu>
+
     <div class="nav-pages">
       <div class="label label-large nav-title">Панели</div>
       <div>

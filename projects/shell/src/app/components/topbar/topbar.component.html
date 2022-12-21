@@ -1,1 +1,4 @@
-<lib-btn-menu (opened)="this.openMenu()"></lib-btn-menu>
+<lib-btn-menu
+  [state]="this.navigationService.visible ? 'toClose' : 'toOpen'"
+  (opened)="this.openMenu()"
+></lib-btn-menu>

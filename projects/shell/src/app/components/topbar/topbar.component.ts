@@ -8,7 +8,7 @@ import { NavigationService } from "../../services/navigation.service"
   styleUrls: ["./topbar.component.scss"],
 })
 export class TopbarComponent {
-  constructor(private navigationService: NavigationService) {}
+  constructor(public navigationService: NavigationService) {}
 
   public openMenu(): void {
     this.navigationService.open()
