@@ -10,7 +10,7 @@ import {
 /**
  * Состояния кнопки:
  *  toOpen - Кнопка должна что-то открыть, сигнал `opened`
- *  toСдщыу - Кнопка должна что-то закрыть, сигнал `closed`
+ *  toClose - Кнопка должна что-то закрыть, сигнал `closed`
  */
 export type btnMenuStates = "toOpen" | "toClose"
 

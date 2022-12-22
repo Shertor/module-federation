@@ -22,10 +22,10 @@ describe("GeneralPageComponent", () => {
     expect(component).toBeTruthy()
   })
 
-  // it('should render title', () => {
-  //   const fixture = TestBed.createComponent(AppComponent);
-  //   fixture.detectChanges();
-  //   const compiled = fixture.nativeElement as HTMLElement;
-  //   expect(compiled.querySelector('.content span')?.textContent).toContain('shell app is running!');
-  // });
+  it('page component should render general title', () => {
+    const fixture = TestBed.createComponent(GeneralPageComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelectorAll('.headline-large.main-title')?.length).toBeGreaterThan(0);
+  });
 })
