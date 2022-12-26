@@ -9,7 +9,7 @@ import { PluginOptions } from "../../../utils/plugins/plugin"
 @Component({
   selector: "app-general-page",
   templateUrl: "./general-page.component.html",
-  styleUrls: ["./general-page.component.scss"],
+  styleUrls: ["./general-page.component.scss", "../../main/main.component.scss"],
 })
 export class GeneralPageComponent implements OnInit {
   /**
@@ -24,7 +24,7 @@ export class GeneralPageComponent implements OnInit {
    * Конструктор инжектирует сервис плагинов
    * @param pluginsService
    */
-  constructor(public pluginsService: PluginsImportService) {}
+  constructor(public pluginsService: PluginsImportService) { }
 
   /**
    * Инициализатор подписывается на сабжект загрузки плагинов.
