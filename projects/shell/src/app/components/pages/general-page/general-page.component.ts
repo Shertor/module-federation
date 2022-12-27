@@ -24,12 +24,16 @@ export class GeneralPageComponent implements OnInit {
    * Конструктор инжектирует сервис плагинов
    * @param pluginsService
    */
-  constructor(public pluginsService: PluginsImportService) { }
+  constructor(public pluginsService: PluginsImportService) {
+    console.log('constructor: GeneralPageComponent');
+  }
 
   /**
    * Инициализатор подписывается на сабжект загрузки плагинов.
    */
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
+    await this.pluginsService.update()
+
     // Запрос плагинов с сервиса будет осуществляться только когда загрузка будет завершена.
     this.pluginsService.loading$
       .pipe(takeUntil(this.ngUnsubscribe))
@@ -37,7 +41,7 @@ export class GeneralPageComponent implements OnInit {
   }
 
   /**
-   * Заправшиват плагины с сервиса загрузки плагинов
+   * Запрашивает плагины с сервиса загрузки плагинов
    * @param loading
    */
   private getPlugins(loading: boolean): void {
