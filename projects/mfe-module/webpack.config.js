@@ -8,7 +8,7 @@ module.exports = withModuleFederationPlugin({
 
   exposes: {
     "./Module":
-      "./projects/mfe-module/src/app/integrated-clock/integrated-clock.module.ts",
+      "./projects/mfe-module/src/app/dashboard/dashboard.module.ts",
   },
 
   shared: {

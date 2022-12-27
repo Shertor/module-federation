@@ -1,10 +1,17 @@
-<div class="main-container">
+<div class="main-wrapper">
   <div class="headline-large main-title">Главная</div>
   <div *ngIf="this.pluginsService.loading; else content">Loading...</div>
   <ng-template #content>
     <ng-container *ngFor="let p of plugins; let last = last">
-      <plugin-proxy [options]="p"></plugin-proxy>
-      <!-- <i *ngIf="!last" class="arrow right"></i> -->
+      <div *ngIf="!last" class="card card-1-2">
+        <div class="label-large">{{p.unicDisplayName}}</div>
+        <plugin-proxy [options]="p"></plugin-proxy>
+      </div>
+
+      <div *ngIf="last" class="card card-1">
+        <div class="label-large">{{p.unicDisplayName}}</div>
+        <plugin-proxy [options]="p"></plugin-proxy>
+      </div>
     </ng-container>
   </ng-template>
 

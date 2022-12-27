@@ -208,3 +208,31 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+
+.main-card {
+  background-color: var(--color-surface);
+  height: 300px;
+  min-width: 275px;
+
+  border-radius: var(--br-standart);
+  border: none;
+
+  isolation: isolate;
+
+  &.card-outlined {
+    border: 1px solid var(--color-outline);
+  }
+  &.card-elevated {
+    background-color: var(--color-surface-1);
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3),
+      0px 2px 6px 0px rgba(0, 0, 0, 0.15);
+  }
+  &.card-filled {
+    background-color: var(--color-surface-1);
+
+    &-info {
+      background-color: var(--color-tertiary-container);
+    }
+  }
+}

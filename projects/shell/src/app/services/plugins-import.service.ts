@@ -16,7 +16,9 @@ export class PluginsImportService {
   private plugins: PluginOptions[] = [];
 
   constructor(private lookupService: LookupService) {
-    this.loadManifest();
+    console.log('constructor: PluginsImportService');
+
+    // this.loadManifest();
   }
 
   /** Функция для загрузки манифеста */
@@ -24,9 +26,11 @@ export class PluginsImportService {
     if (this.loading) return;
 
     this.loading$.next(true);
+    console.log('plugins will be loaded');
     this.lookupService.lookup().then((plugins) => {
       this.plugins = plugins;
       this.loading$.next(false);
+      console.log('plugins loaded');
     });
   }
 
