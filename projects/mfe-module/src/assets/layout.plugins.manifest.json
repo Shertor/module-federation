@@ -1,0 +1,22 @@
+[
+  {
+    "unicDisplayName": "Plugin1",
+    "width": "card-1"
+  },
+  {
+    "unicDisplayName": "Plugin2",
+    "width": "card-1-2"
+  },
+  {
+    "unicDisplayName": "Plugin3",
+    "width": "card-1-2"
+  },
+  {
+    "unicDisplayName": "Plugin4",
+    "width": "card-1"
+  },
+  {
+    "unicDisplayName": "Plugin5",
+    "width": "card-1"
+  }
+]

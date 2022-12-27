@@ -1,0 +1,35 @@
+.main-wrapper {
+  position: relative;
+
+  min-width: 100%;
+  min-height: 100%;
+  height: fit-content;
+
+  gap: 1rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  flex-flow: row wrap;
+
+  .main-title {
+    width: 100%;
+    flex-grow: 1;
+  }
+
+  .card-1-2 {
+    flex: 1 1 calc(50% - 1rem);
+  }
+
+  .card-1-4 {
+    flex: 1 1 calc(25% - 1rem);
+  }
+
+  .card-1 {
+    flex: 1 1 100%;
+  }
+
+  .card-fill {
+    flex: 999 1 0%;
+  }
+}

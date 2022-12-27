@@ -4,6 +4,6 @@
     "exposedModule": "./Module",
     "displayName": "Clock",
     "routePath": "clock",
-    "ngModuleName": "IntegratedClockModule"
+    "ngModuleName": "DashboardModule"
   }
 }
