@@ -31,8 +31,9 @@ export class ViewDashboardComponent implements OnInit {
    * Инициализатор подписывается на сабжект загрузки плагинов.
    */
   async ngOnInit(): Promise<void> {
+    this.pluginsService.messages$.next('Загрузка сетки...')
     await this.layoutService.update()
-
+    this.pluginsService.messages$.next('Загрузка плагинов...')
     await this.pluginsService.update()
 
     // Запрос плагинов с сервиса будет осуществляться только когда загрузка будет завершена.
@@ -47,6 +48,7 @@ export class ViewDashboardComponent implements OnInit {
    */
   private getPlugins(loading: boolean): void {
     if (loading) return
+    this.pluginsService.messages$.next('Загрузка плагинов...')
 
     this.plugins = this.pluginsService.getPlugins()
   }

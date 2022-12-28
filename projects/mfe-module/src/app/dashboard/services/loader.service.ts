@@ -15,6 +15,8 @@ export class LoaderService {
   public renderingPlugins$: BehaviorSubject<boolean> = new BehaviorSubject(true)
   /** Количество отрендеренных плагинов */
   public renderedPlugins$: BehaviorSubject<number> = new BehaviorSubject(0)
+  /** Количество отрендеренных плагинов */
+  public messages$: BehaviorSubject<string> = new BehaviorSubject("Загрузка...")
 
   constructor(private lookupService: LookupService) {}
 
@@ -33,11 +35,14 @@ export class LoaderService {
     if (this.loading) return
 
     this.loadingManifest$.next(true)
+    this.messages$.next('Загрузка манифеста...')
     this.lookupService.lookup().then((plugins) => {
       setTimeout(() => {
         this.plugins = plugins
         this.loadingManifest$.next(false)
       }, 0)
+    }).catch((error)=>{
+      this.messages$.next(error)
     })
   }
 
@@ -96,11 +101,14 @@ export class LoaderService {
    */
   public setPluginRendered(name: string) {
     // console.log(name, this.renderedPlugins, this.plugins.length);
-
     if (this.plugins.filter((p) => p.unicDisplayName === name).length > 0) {
       this.renderedPlugins$.next(this.renderedPlugins + 1)
+
       if (this.renderedPlugins + 1 === this.plugins.length) {
+        this.messages$.next('Все плагины загружены!')
+
         this.renderingPlugins$.next(false)
+        return
       }
     }
   }

@@ -12,6 +12,16 @@
   align-content: flex-start;
   flex-flow: row wrap;
 
+  &.loading {
+    position: absolute;
+    visibility: hidden;
+    top: 0;
+    left: 0;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
   .main-title {
     width: 100%;
     flex-grow: 1;

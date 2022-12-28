@@ -1,20 +1,37 @@
 <div class="main-wrapper">
-  <div class="headline-large main-title">Главная</div>
-  <div *ngIf="this.pluginsService.loading; else content">Loading...</div>
-  <ng-template #content>
-    <ng-container *ngFor="let p of plugins; let last = last">
-      <div *ngIf="!last" class="card card-1-2">
-        <div class="label-large">{{p.unicDisplayName}}</div>
-        <plugin-proxy [options]="p"></plugin-proxy>
+  <!-- <div class="headline-large main-title">Главная</div> -->
+  <div class="main-card card-filled-info card-1">
+    <div class="content-wrapper">
+      <div class="display-large">О проекте</div>
+      <div class="title-large card-content">
+        Современный подход к большим веб-приложениям: концепт микрофронтендов
+        при помощи module-federation позволяет внедрять в проект как отдельные
+        компоненты, например, виджеты или баннеры, так и обособленные модули,
+        которые могут разрабатываться отдельными командами. При этом основное
+        приложение на этапе разработки не знает о существовании этих модулей
+        напрямую.
       </div>
-
-      <div *ngIf="last" class="card card-1">
-        <div class="label-large">{{p.unicDisplayName}}</div>
-        <plugin-proxy [options]="p"></plugin-proxy>
+    </div>
+  </div>
+  <div class="main-card card-filled card-1-2">
+    <div class="card-img"><img src="./assets/imgs/module.png" alt="" /></div>
+    <div class="content-wrapper">
+      <div class="headline-small">Модули</div>
+      <div class="card-content">
+        Модули представляют собой отдельные приложения, которые разрабатываются
+        и собираются независимо от основного проекта.
       </div>
-    </ng-container>
-  </ng-template>
+    </div>
+  </div>
+  <div class="main-card card-filled card-1-2">
+    <div class="card-img"><img src="./assets/imgs/plugin.png" alt="" /></div>
 
-  <!-- Теперь можно где-то создать кнопку, которая будет обновлять плагины по команде -->
-  <!-- <button (click)="this.pluginsService.update()">Update</button> -->
+    <div class="content-wrapper">
+      <div class="headline-small">Плагины</div>
+      <div class="card-content">
+        Плагины могут быть как относительно простыми, так и сложными
+        компонентами основного проекта. Они также загружаются извне.
+      </div>
+    </div>
+  </div>
 </div>

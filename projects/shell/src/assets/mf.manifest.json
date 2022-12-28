@@ -2,15 +2,8 @@
   "mfe-module1": {
     "remoteEntry": "http://localhost:4201/remoteEntry.js",
     "exposedModule": "./Module",
-    "displayName": "Module1",
-    "routePath": "module1",
-    "ngModuleName": "DashboardModule"
-  },
-  "mfe-module2": {
-    "remoteEntry": "http://localhost:4201/remoteEntry.js",
-    "exposedModule": "./Module",
-    "displayName": "Module2",
-    "routePath": "module2",
+    "displayName": "Dashboard",
+    "routePath": "dashboard",
     "ngModuleName": "DashboardModule"
   }
 }

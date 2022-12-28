@@ -19,7 +19,9 @@ export class ViewLoaderComponent implements OnInit {
 
   public state: ViewLoaderStates = "hide"
 
-  public loadingMessage: BehaviorSubject<string> = new BehaviorSubject("")
+  public loadingMessage: BehaviorSubject<string> = new BehaviorSubject(
+    "Загрузка..."
+  )
 
   constructor(public loaderService: LoaderService) {}
 
@@ -43,14 +45,18 @@ export class ViewLoaderComponent implements OnInit {
       .subscribe((renderingPlugins) => {
         if (!renderingPlugins) {
           this.state = "hide"
-          this.loadingMessage.next("Успешно!")
           return
         }
         if (renderingPlugins) {
-          this.loadingMessage.next("Загрузка плагинов...")
           this.state = "show"
           return
         }
+      })
+
+    this.loaderService.messages$
+      .pipe(takeUntil(this.ngUnsubscribe))
+      .subscribe((message: string) => {
+        this.loadingMessage.next(message)
       })
   }
 
