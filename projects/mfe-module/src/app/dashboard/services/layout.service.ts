@@ -1,6 +1,7 @@
 import { HttpClient, HttpErrorResponse } from "@angular/common/http"
 import { Injectable } from "@angular/core"
 import { catchError, lastValueFrom, Observable, retry, throwError } from "rxjs"
+import { environment } from "projects/shell/src/environments/environment"
 
 export type LayoutOptions = {
   unicDisplayName: string
@@ -22,7 +23,7 @@ export class LayoutService {
   lookup(): Promise<LayoutOptions[]> {
     return lastValueFrom(
       this.http
-        .get<LayoutOptions[]>("../../../assets/layout.plugins.manifest.json")
+        .get<LayoutOptions[]>(environment.layoutFromDashboard)
         .pipe(retry(3), catchError(this.handleError))
     )
   }
