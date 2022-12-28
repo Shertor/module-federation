@@ -9,6 +9,7 @@ import {
   Output,
 } from "@angular/core"
 import { MfeShellExampleService } from "@shared"
+import { PluginComponent } from "@styleguide"
 import { BehaviorSubject } from "rxjs"
 
 /**
@@ -22,16 +23,16 @@ import { BehaviorSubject } from "rxjs"
   styleUrls: ["./plugin1.component.scss"],
   imports: [CommonModule],
 })
-export class Plugin1Component implements OnInit {
+export class Plugin1Component extends PluginComponent implements OnInit {
   /** Некоторое тестовое значение как пример изменения состояния компонента */
   private someValue$: BehaviorSubject<number> = new BehaviorSubject(0)
 
-  @Output() loaded = new EventEmitter<boolean>()
+  constructor(public sharedService: MfeShellExampleService) {
+    super()
+  } // Конструктор инжектирует общий сервис как пример
 
-  constructor(public sharedService: MfeShellExampleService) {} // Конструктор инжектирует общий сервис как пример
-
-  async ngOnInit() {
-    this.loaded.emit(true)
+  childNgOnInit(): void {
+    // throw new Error("Method not implemented.")
   }
 
   /**
