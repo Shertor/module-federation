@@ -26,7 +26,9 @@ export abstract class PluginComponent implements OnInit {
   ngOnInit(): void {
     this.childNgOnInit()
 
-    this.loaded.emit(true)
+    setTimeout(() => {
+      this.loaded.emit(true)
+    }, 0)
   }
 
   abstract childNgOnInit(): void

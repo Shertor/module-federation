@@ -10,9 +10,153 @@
   {
     "type": "module",
     "remoteEntry": "http://localhost/mfe-plugins/remoteEntry.js",
-    "exposedModule": "./Plugin1",
+    "exposedModule": "./Plugin2",
 
     "unicDisplayName": "Plugin2",
+    "componentName": "Plugin2Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost/mfe-plugins/remoteEntry.js",
+    "exposedModule": "./Plugin3",
+
+    "unicDisplayName": "Plugin3",
+    "componentName": "Plugin3Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost/mfe-plugins/remoteEntry.js",
+    "exposedModule": "./Plugin4",
+
+    "unicDisplayName": "Plugin4",
+    "componentName": "Plugin4Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost/mfe-plugins/remoteEntry.js",
+    "exposedModule": "./Plugin5",
+
+    "unicDisplayName": "Plugin5",
+    "componentName": "Plugin5Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost/mfe-plugins/remoteEntry.js",
+    "exposedModule": "./Plugin1",
+
+    "unicDisplayName": "Plugin6",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost/mfe-plugins/remoteEntry.js",
+    "exposedModule": "./Plugin1",
+
+    "unicDisplayName": "Plugin7",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost/mfe-plugins/remoteEntry.js",
+    "exposedModule": "./Plugin1",
+
+    "unicDisplayName": "Plugin8",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost/mfe-plugins/remoteEntry.js",
+    "exposedModule": "./Plugin1",
+
+    "unicDisplayName": "Plugin9",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost/mfe-plugins/remoteEntry.js",
+    "exposedModule": "./Plugin1",
+
+    "unicDisplayName": "Plugin10",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost/mfe-plugins/remoteEntry.js",
+    "exposedModule": "./Plugin1",
+
+    "unicDisplayName": "Plugin11",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost/mfe-plugins/remoteEntry.js",
+    "exposedModule": "./Plugin1",
+
+    "unicDisplayName": "Plugin12",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost/mfe-plugins/remoteEntry.js",
+    "exposedModule": "./Plugin1",
+
+    "unicDisplayName": "Plugin13",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost/mfe-plugins/remoteEntry.js",
+    "exposedModule": "./Plugin1",
+
+    "unicDisplayName": "Plugin14",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost/mfe-plugins/remoteEntry.js",
+    "exposedModule": "./Plugin1",
+
+    "unicDisplayName": "Plugin15",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost/mfe-plugins/remoteEntry.js",
+    "exposedModule": "./Plugin1",
+
+    "unicDisplayName": "Plugin16",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost/mfe-plugins/remoteEntry.js",
+    "exposedModule": "./Plugin1",
+
+    "unicDisplayName": "Plugin17",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost/mfe-plugins/remoteEntry.js",
+    "exposedModule": "./Plugin1",
+
+    "unicDisplayName": "Plugin18",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost/mfe-plugins/remoteEntry.js",
+    "exposedModule": "./Plugin1",
+
+    "unicDisplayName": "Plugin19",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost/mfe-plugins/remoteEntry.js",
+    "exposedModule": "./Plugin1",
+
+    "unicDisplayName": "Plugin20",
     "componentName": "Plugin1Component"
   }
 ]
