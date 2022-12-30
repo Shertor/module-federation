@@ -7,13 +7,15 @@ import { ViewDashboardComponent } from './components/view-dashboard/view-dashboa
 import { ViewLoaderComponent } from './components/view-loader/view-loader.component';
 import { PluginProxyComponent } from './utils/plugins/plugin-proxy.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PageLoaderComponent } from './components/page-loader/page-loader.component';
 
 
 @NgModule({
   declarations: [
     DashboardComponent,
     ViewDashboardComponent,
-    ViewLoaderComponent
+    ViewLoaderComponent,
+    PageLoaderComponent
   ],
   imports: [
     CommonModule,

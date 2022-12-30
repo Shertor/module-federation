@@ -3,24 +3,31 @@ import { Injectable } from "@angular/core"
 import { catchError, lastValueFrom, Observable, retry, throwError } from "rxjs"
 import { environment } from "projects/shell/src/environments/environment"
 
+/**
+ * Свойства расположения плагинов
+ */
 export type LayoutOptions = {
-  unicDisplayName: string
-  width: string
+  /** ID should correspond with ID in PluginOptions */
+  id: string
+  styleClass: string
 }
 
+/**
+ * Сервис для загрузки манифеста расположения плагинов (Лэйаута)
+ */
 @Injectable({
   providedIn: "root",
 })
 export class LayoutService {
-  private layout: LayoutOptions[] = []
+  /** Расположение плагинов подгруженное из манифеста */
+  private _layout: LayoutOptions[] = []
+  /** Флаг состояния загрузки */
+  private _loading: boolean = false
 
-  constructor(private http: HttpClient) {
-    this.lookup().then((layout) => {
-      this.layout = layout
-    })
-  }
+  constructor(private http: HttpClient) {}
 
-  lookup(): Promise<LayoutOptions[]> {
+  /** Функция загрузки манифеста через http запрос */
+  private lookup(): Promise<LayoutOptions[]> {
     return lastValueFrom(
       this.http
         .get<LayoutOptions[]>(environment.layoutFromDashboard)
@@ -28,20 +35,27 @@ export class LayoutService {
     )
   }
 
-  public async update() {
-    await this.lookup()
+  /** Функция для загрузки манифеста */
+  private async loadManifest(): Promise<void> {
+    if (this._loading) return
+
+    this._loading = true
+    await this.lookup().then((layout) => {
+      this._layout = layout
+      this._loading = false
+    })
   }
 
-  public getProps(pluginName: string): LayoutOptions {
-    let pluginOptions = this.layout.find(
-      (item) => item.unicDisplayName === pluginName
-    )
+  /**
+   * Обновляет манифест
+   */
+  public async update() {
+    await this.loadManifest()
+  }
 
-    if (pluginOptions) {
-      return pluginOptions
-    }
-
-    return { unicDisplayName: "default", width: "card-1" }
+  /** Возвращает манифест */
+  public get Layout(): LayoutOptions[] {
+    return this._layout
   }
 
   /**

@@ -1,8 +1,6 @@
-import { Component, OnInit } from "@angular/core"
-import { Subject, takeUntil } from "rxjs"
-import { LayoutService } from "../../services/layout.service"
-import { LoaderService } from "../../services/loader.service"
-import { PluginOptions } from "../../utils/plugins/plugin"
+import { Component, EventEmitter, OnInit, Output } from "@angular/core"
+import { BehaviorSubject } from "rxjs/internal/BehaviorSubject"
+import { Plugin, PluginState } from "../../utils/plugins/plugins"
 
 @Component({
   selector: "app-view-dashboard",
@@ -10,68 +8,35 @@ import { PluginOptions } from "../../utils/plugins/plugin"
   styleUrls: ["./view-dashboard.component.scss"],
 })
 export class ViewDashboardComponent implements OnInit {
-  /**
-   * Сабжект, позволяющий при помощи pipe(takeUntil(this.ngUnsubscribe))
-   *  затем отписаться от всех подписок
-   */
-  private ngUnsubscribe = new Subject<void>()
+  baseMessage: [string, PluginState] = ["", "not rendered"]
+
   /** Плагины текущей страницы */
-  public plugins: PluginOptions[] = []
+  public plugins: Plugin[] = []
+  /** Событие окончания инициализации плагина */
+  private _pluginsStates$: BehaviorSubject<[string, PluginState]> =
+    new BehaviorSubject(this.baseMessage)
+  public pluginStateChanged$ = this._pluginsStates$.asObservable()
+
+  /** Состояния дашборда, влияют на класс в html/css */
+  public state: "show" | "hide" = "show"
+
+  constructor() {}
+
+  async ngOnInit(): Promise<void> {}
 
   /**
-   * Конструктор инжектирует сервис плагинов
-   * @param pluginsService
+   * Добавляет все плагины на дашборд
+   * @param plugins Список плагинов в виде `Plugin[]`
    */
-  constructor(
-    public layoutService: LayoutService,
-    public pluginsService: LoaderService
-  ) {}
-
-  /**
-   * Инициализатор подписывается на сабжект загрузки плагинов.
-   */
-  async ngOnInit(): Promise<void> {
-    this.pluginsService.messages$.next("Загрузка сетки...")
-    await this.layoutService.update()
-    this.pluginsService.messages$.next("Загрузка плагинов...")
-    await this.pluginsService.update()
-
-    // Запрос плагинов с сервиса будет осуществляться только когда загрузка будет завершена.
-    this.pluginsService.loadingManifest$
-      .pipe(takeUntil(this.ngUnsubscribe))
-      .subscribe(this.getPlugins.bind(this))
-  }
-
-  /**
-   * Запрашивает плагины с сервиса загрузки плагинов
-   * @param loading
-   */
-  private getPlugins(loading: boolean): void {
-    if (loading) return
-    this.pluginsService.messages$.next("Загрузка плагинов...")
-
-    this.plugins = this.pluginsService.getPlugins()
-    this.pluginsService.messages$.next(
-      `Загрузка плагинов 0 из ${this.plugins.length}`
-    )
+  public addPlugins(plugins: Plugin[]) {
+    this.plugins = plugins
   }
 
   /**
    * Обрабатывает событие рендеринга плагина
-   * @param pluginName plugin unicDisplayName
+   * @param pluginName plugin id
    */
   public onPluginRendered(pluginName: string) {
-    this.pluginsService.setPluginRendered(pluginName)
-    this.pluginsService.messages$.next(
-      `Загрузка плагинов ${this.pluginsService.renderedPlugins} из ${this.plugins.length}`
-    )
-  }
-
-  /**
-   * Деструктор удаляет все подписки
-   */
-  ngOnDestroy() {
-    this.ngUnsubscribe.next()
-    this.ngUnsubscribe.complete()
+    this._pluginsStates$.next([pluginName, "rendered"])
   }
 }

@@ -1,35 +1,25 @@
-<div
-  class="main-wrapper"
-  [ngClass]="{ loading: this.pluginsService.renderingPlugins }"
->
+<div class="main-wrapper" [ngClass]="{ loading: this.state === 'hide' }">
   <!-- <div class="headline-large main-title">Dashboard</div> -->
-  <div *ngIf="false; else content">Loading...</div>
+  <div *ngIf="false; else content">Загрузка...</div>
+
   <ng-template #content>
     <ng-container *ngFor="let p of plugins; let last = last">
-      <div
-        *ngIf="!last"
-        class="main-card"
-        [ngClass]="this.layoutService.getProps(p.unicDisplayName).width"
-      >
+      <div *ngIf="!last" class="main-card" [ngClass]="p.styleClass">
         <div class="content-wrapper">
-          <div class="label-large">{{ p.unicDisplayName }}</div>
+          <div class="label-large">{{ p.id }}</div>
           <plugin-proxy
             [options]="p"
-            (loaded)="this.onPluginRendered(p.unicDisplayName)"
+            (loaded)="this.onPluginRendered(p.id)"
           ></plugin-proxy>
         </div>
       </div>
 
-      <div
-        *ngIf="last"
-        class="main-card"
-        [ngClass]="this.layoutService.getProps(p.unicDisplayName).width"
-      >
+      <div *ngIf="last" class="main-card" [ngClass]="p.styleClass">
         <div class="content-wrapper">
-          <div class="label-large">{{ p.unicDisplayName }}</div>
+          <div class="label-large">{{ p.id }}</div>
           <plugin-proxy
             [options]="p"
-            (loaded)="this.onPluginRendered(p.unicDisplayName)"
+            (loaded)="this.onPluginRendered(p.id)"
           ></plugin-proxy>
         </div>
       </div>

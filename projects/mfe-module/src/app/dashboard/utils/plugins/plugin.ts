@@ -1,8 +1,8 @@
 import { LoadRemoteModuleOptions } from "@angular-architects/module-federation"
 
 export type PluginOptions = LoadRemoteModuleOptions & {
-  unicDisplayName: string
+  id: string
   componentName: string
 
-  page: number | undefined
+  pageID: number | undefined
 }
