@@ -8,6 +8,7 @@ export const enum EventType {
 }
 
 export interface BusEvent<T = any> {
+  sender?: string
   type: EventType
   payload: T
 }
@@ -22,10 +23,10 @@ export class EventBusService {
    * Subscribe to event
    * @param type - event type
    */
-  public on<T = any>(type: EventType): Observable<T> {
+  public on<T = any>(type: EventType): Observable<BusEvent> {
     return this._eventSubject.pipe(
       filter((event) => event.type === type),
-      map((event) => event.payload)
+      map((event) => event)
     )
   }
 

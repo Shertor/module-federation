@@ -10,6 +10,7 @@
           <plugin-proxy
             [options]="p"
             (loaded)="this.onPluginRendered(p.id)"
+            (toBusEvent)="this.toBusEvent($event, p.id)"
           ></plugin-proxy>
         </div>
       </div>
@@ -20,6 +21,7 @@
           <plugin-proxy
             [options]="p"
             (loaded)="this.onPluginRendered(p.id)"
+            (toBusEvent)="this.toBusEvent($event, p.id)"
           ></plugin-proxy>
         </div>
       </div>

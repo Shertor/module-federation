@@ -42,7 +42,7 @@ export class PageLoaderComponent implements OnInit, AfterContentInit {
   private _childsLoaded$: BehaviorSubject<boolean> = new BehaviorSubject(false)
   /** Плагины текущей страницы */
   private _plugins: Plugins = new Plugins()
-  /** */
+  /** Айди таймаута для подписки на событие из ШиныСобытий*/
   private _TimeoutBusEvent2: NodeJS.Timeout | undefined
 
   constructor(
@@ -53,10 +53,12 @@ export class PageLoaderComponent implements OnInit, AfterContentInit {
 
   /** Инициализатор подписывается на сабжект загрузки лоадера и дашборда */
   ngOnInit(): void {
+    // Подписка на окончание загрузки чайлдов
     this._childsLoaded$
       .pipe(takeUntil(this._ngUnsubscribe))
       .subscribe(this.onChildsLoaded.bind(this))
 
+    // Пример подписки на одно из событий в ШинеСобытий
     this._eventBusService
       .on(EventType.EVENT_1)
       .pipe(takeUntil(this._ngUnsubscribe))
@@ -64,6 +66,7 @@ export class PageLoaderComponent implements OnInit, AfterContentInit {
         console.log(event)
       })
 
+    // Пример подписки, срабатывающей с таймаутом
     this._eventBusService
       .on(EventType.EVENT_2)
       .pipe(takeUntil(this._ngUnsubscribe))
@@ -148,7 +151,7 @@ export class PageLoaderComponent implements OnInit, AfterContentInit {
     }
   }
 
-  /** */
+  /** Функция срабатывающая с таймаутом на событие из шины */
   private onBusEvent2(event: BusEvent) {
     if (this._TimeoutBusEvent2) {
       clearTimeout(this._TimeoutBusEvent2)
@@ -156,7 +159,7 @@ export class PageLoaderComponent implements OnInit, AfterContentInit {
 
     this._TimeoutBusEvent2 = setTimeout(() => {
       console.log(event)
-    }, 5000)
+    }, 1000)
   }
 
   /**

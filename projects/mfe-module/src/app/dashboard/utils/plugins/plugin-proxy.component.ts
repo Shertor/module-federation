@@ -16,6 +16,7 @@ import {
 import { loadRemoteModule } from "@angular-architects/module-federation"
 import { PluginOptions } from "./plugin"
 import { Subject, Subscription, takeUntil } from "rxjs"
+import { BusEvent } from "@shared"
 
 @Component({
   standalone: true,
@@ -35,6 +36,8 @@ export class PluginProxyComponent implements OnChanges {
 
   /** Событие окончания инициализации плагина */
   @Output() loaded = new EventEmitter<boolean>()
+  /** Событие для передачи в шину событий */
+  @Output() toBusEvent = new EventEmitter<BusEvent>()
 
   /** Параметры плагинов */
   @Input() options!: PluginOptions
@@ -58,6 +61,15 @@ export class PluginProxyComponent implements OnChanges {
         if (loaded) {
           // console.log(componentRef.instance)
           this.loaded.emit(true)
+        }
+      })
+
+    // Создание подписчика на события в шину событий
+    componentRef.instance?.toBusEvent
+      ?.pipe(takeUntil(this.ngUnsubscribe))
+      .subscribe((toBusEvent: BusEvent) => {
+        if (toBusEvent) {
+          this.toBusEvent.emit(toBusEvent)
         }
       })
 

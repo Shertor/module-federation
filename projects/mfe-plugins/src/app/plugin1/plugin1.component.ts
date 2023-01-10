@@ -23,23 +23,15 @@ import { BehaviorSubject } from "rxjs"
 export class Plugin1Component extends PluginComponent implements OnInit {
   /** Некоторое тестовое значение как пример изменения состояния компонента */
   private someValue$: BehaviorSubject<number> = new BehaviorSubject(0)
-  /** */
+  /** Некоторое значения для шины событий */
   private _busValue: number = 0
 
-  constructor(
-    public sharedService: MfeShellExampleService,
-    private _eventBusService: EventBusService
-  ) {
+  constructor(public sharedService: MfeShellExampleService) {
     super()
   }
 
   childNgOnInit(): void {
     // throw new Error("Method not implemented.")
-    const event: BusEvent = {
-      type: EventType.EVENT_1,
-      payload: `Hallo from Plugin`,
-    }
-    this._eventBusService.next(event)
   }
 
   /**
@@ -65,11 +57,12 @@ export class Plugin1Component extends PluginComponent implements OnInit {
   }
 
   /**
-   *
+   * Эмитет событие в ШинуСобытий
    */
   public onEmitEvent() {
     this._busValue += 1
     const event: BusEvent = { type: EventType.EVENT_2, payload: this._busValue }
-    this._eventBusService.next(event)
+
+    this.toBusService(event)
   }
 }

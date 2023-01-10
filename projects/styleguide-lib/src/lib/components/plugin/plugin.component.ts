@@ -1,5 +1,6 @@
 import { CommonModule } from "@angular/common"
 import { Component, EventEmitter, OnInit, Output } from "@angular/core"
+import { BusEvent, EventType } from "@shared"
 
 /**
  * Абстрактный суперкласс плагина
@@ -16,6 +17,8 @@ import { Component, EventEmitter, OnInit, Output } from "@angular/core"
 export abstract class PluginComponent implements OnInit {
   /** Сигнал завершения инициализации компонента */
   @Output() loaded = new EventEmitter<boolean>()
+  /** Сигнал для передачи в шину событий */
+  @Output() toBusEvent = new EventEmitter<BusEvent>()
 
   constructor() {}
 
@@ -32,4 +35,12 @@ export abstract class PluginComponent implements OnInit {
   }
 
   abstract childNgOnInit(): void
+
+  /**
+   * Фунция эмитит события `BusEvent` для перехвата родителем
+   * @param event Событие для передачи в шину (без поля `sender`)
+   */
+  public toBusService(event: BusEvent) {
+    this.toBusEvent.emit(event)
+  }
 }

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from "@angular/core"
+import { BusEvent, EventBusService } from "@shared"
 import { BehaviorSubject } from "rxjs/internal/BehaviorSubject"
 import { Plugin, PluginState } from "../../utils/plugins/plugins"
 
@@ -20,7 +21,7 @@ export class ViewDashboardComponent implements OnInit {
   /** Состояния дашборда, влияют на класс в html/css */
   public state: "show" | "hide" = "show"
 
-  constructor() {}
+  constructor(private _eventBusService: EventBusService) {}
 
   async ngOnInit(): Promise<void> {}
 
@@ -38,5 +39,13 @@ export class ViewDashboardComponent implements OnInit {
    */
   public onPluginRendered(pluginName: string) {
     this._pluginsStates$.next([pluginName, "rendered"])
+  }
+
+  /** Перехватывает событие для шины, заполняет поле `sender`
+   * @param event Событие для передачи в шину без поля `sender`
+   * @param sender ID плагина
+   */
+  public toBusEvent(event: BusEvent, sender: string) {
+    this._eventBusService.next({ sender: sender, ...event })
   }
 }
