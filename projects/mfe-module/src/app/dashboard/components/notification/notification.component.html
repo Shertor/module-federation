@@ -1,0 +1,7 @@
+<div *ngIf="this.state == 'show'; then show; else hide"></div>
+
+<ng-template #show>
+  <div class="notification">{{ this.message }}</div>
+</ng-template>
+
+<ng-template #hide></ng-template>

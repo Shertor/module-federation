@@ -8,6 +8,7 @@ import { ViewLoaderComponent } from './components/view-loader/view-loader.compon
 import { PluginProxyComponent } from './utils/plugins/plugin-proxy.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PageLoaderComponent } from './components/page-loader/page-loader.component';
+import { NotificationComponent } from './components/notification/notification.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { PageLoaderComponent } from './components/page-loader/page-loader.compon
     DashboardComponent,
     ViewDashboardComponent,
     ViewLoaderComponent,
-    PageLoaderComponent
+    PageLoaderComponent,
+    NotificationComponent
   ],
   imports: [
     CommonModule,
