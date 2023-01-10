@@ -1,6 +1,8 @@
 import { AfterContentInit, Component, OnInit, ViewChild } from "@angular/core"
 import { BehaviorSubject, Subject, takeUntil } from "rxjs"
 
+import { BusEvent, EventBusService, EventType } from "@shared"
+
 import { LayoutOptions, LayoutService } from "../../services/layout.service"
 import { LoaderService } from "../../services/loader.service"
 
@@ -40,10 +42,13 @@ export class PageLoaderComponent implements OnInit, AfterContentInit {
   private _childsLoaded$: BehaviorSubject<boolean> = new BehaviorSubject(false)
   /** Плагины текущей страницы */
   private _plugins: Plugins = new Plugins()
+  /** */
+  private _TimeoutBusEvent2: NodeJS.Timeout | undefined
 
   constructor(
     private _layoutService: LayoutService,
-    private _loaderService: LoaderService
+    private _loaderService: LoaderService,
+    private _eventBusService: EventBusService
   ) {}
 
   /** Инициализатор подписывается на сабжект загрузки лоадера и дашборда */
@@ -51,6 +56,18 @@ export class PageLoaderComponent implements OnInit, AfterContentInit {
     this._childsLoaded$
       .pipe(takeUntil(this._ngUnsubscribe))
       .subscribe(this.onChildsLoaded.bind(this))
+
+    this._eventBusService
+      .on(EventType.EVENT_1)
+      .pipe(takeUntil(this._ngUnsubscribe))
+      .subscribe((event) => {
+        console.log(event)
+      })
+
+    this._eventBusService
+      .on(EventType.EVENT_2)
+      .pipe(takeUntil(this._ngUnsubscribe))
+      .subscribe(this.onBusEvent2.bind(this))
   }
 
   /** После завершения инициализации компонентов
@@ -129,6 +146,17 @@ export class PageLoaderComponent implements OnInit, AfterContentInit {
       this._viewLoader.state = "hide"
       this._dashboard.state = "show"
     }
+  }
+
+  /** */
+  private onBusEvent2(event: BusEvent) {
+    if (this._TimeoutBusEvent2) {
+      clearTimeout(this._TimeoutBusEvent2)
+    }
+
+    this._TimeoutBusEvent2 = setTimeout(() => {
+      console.log(event)
+    }, 5000)
   }
 
   /**

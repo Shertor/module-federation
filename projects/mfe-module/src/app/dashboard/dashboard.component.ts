@@ -1,4 +1,5 @@
 import { Component } from "@angular/core"
+import { EventBusService } from "@shared"
 import { LayoutService } from "./services/layout.service"
 import { LoaderService } from "./services/loader.service"
 
@@ -10,6 +11,7 @@ import { LoaderService } from "./services/loader.service"
 export class DashboardComponent {
   constructor(
     private _layoutService: LayoutService,
-    private _loaderService: LoaderService
+    private _loaderService: LoaderService,
+    private _eventBusService: EventBusService
   ) {}
 }
