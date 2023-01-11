@@ -6,10 +6,10 @@ import { environment } from "projects/shell/src/environments/environment"
  * @param callback
  */
 export function awaitChilds(callback: (args: void) => void): void {
-  if (environment.production) {
-    callback()
-    return
-  }
+  // if (environment.production) {
+  //   callback()
+  //   return
+  // }
 
   setTimeout(callback, 0)
 }

@@ -2,11 +2,10 @@ import { CommonModule } from "@angular/common"
 import { Component, OnInit } from "@angular/core"
 import {
   BusEvent,
-  EventBusService,
   EventType,
   MfeShellExampleService,
+  PluginComponent,
 } from "@shared"
-import { PluginComponent } from "@styleguide"
 import { BehaviorSubject } from "rxjs"
 
 /**

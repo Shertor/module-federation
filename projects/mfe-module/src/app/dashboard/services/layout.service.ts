@@ -28,6 +28,8 @@ export class LayoutService {
 
   /** Функция загрузки манифеста через http запрос */
   private lookup(): Promise<LayoutOptions[]> {
+    console.log(environment.layoutFromDashboard)
+
     return lastValueFrom(
       this.http
         .get<LayoutOptions[]>(environment.layoutFromDashboard)

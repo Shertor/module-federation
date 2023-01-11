@@ -9,7 +9,7 @@
     "build:mfe": "ng build mfe-plugins",
     "build:shared": "ng build shared",
     "build:clock": "ng build clock",
-    "build": "ng build shell --base-href /shell/ && ng build shared && ng build mfe-plugins && ng build mfe-module --base-href /mfe-module/",
+    "build": "ng build shell --base-href /shell/ && ng build shared && ng build styleguide-lib && ng build mfe-plugins && ng build mfe-module --base-href /mfe-module/",
     "run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js"
   },
   "private": true,

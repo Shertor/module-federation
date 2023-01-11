@@ -1,6 +1,6 @@
 import { CommonModule } from "@angular/common"
 import { Component, EventEmitter, OnInit, Output } from "@angular/core"
-import { BusEvent, EventType } from "@shared"
+import { BusEvent } from "../../services/event-bus.service"
 
 /**
  * Абстрактный суперкласс плагина

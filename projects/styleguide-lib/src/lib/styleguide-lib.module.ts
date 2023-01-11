@@ -1,5 +1,4 @@
 import { NgModule } from "@angular/core"
-import { PluginComponent } from "./components/plugin/plugin.component"
 
 @NgModule({
   declarations: [],
