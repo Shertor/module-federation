@@ -1,7 +1,7 @@
 import { AfterContentInit, Component, OnInit, ViewChild } from "@angular/core"
 import { BehaviorSubject, Subject, takeUntil } from "rxjs"
 
-import { BusEvent, EventBusService, EventType } from "@shared"
+import { BusEvent, EventBusService, EventType } from "shared"
 
 import { LayoutOptions, LayoutService } from "../../services/layout.service"
 import { LoaderService } from "../../services/loader.service"

@@ -3,5 +3,9 @@
   "dest": "../../dist/shared",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "allowedNonPeerDependencies": [
+    "rxjs",
+    "tslib"
+  ]
 }

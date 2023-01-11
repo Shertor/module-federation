@@ -1,5 +1,5 @@
 import { Component } from "@angular/core"
-import { EventBusService } from "@shared"
+import { EventBusService } from "shared"
 import { LayoutService } from "./services/layout.service"
 import { LoaderService } from "./services/loader.service"
 

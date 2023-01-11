@@ -8,8 +8,7 @@ module.exports = withModuleFederationPlugin({
     ...shareAll({
       singleton: true,
       strictVersion: true,
-      requiredVersion: "auto",
+      requiredVersion: false,
     }),
-  },
-  sharedMappings: ["@shared"],
+  }
 });

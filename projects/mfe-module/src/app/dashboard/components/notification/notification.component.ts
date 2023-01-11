@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core"
-import { BusEvent, EventBusService, EventType } from "@shared"
+import { BusEvent, EventBusService, EventType } from "shared"
 import { Subject, takeUntil } from "rxjs"
 
 @Component({

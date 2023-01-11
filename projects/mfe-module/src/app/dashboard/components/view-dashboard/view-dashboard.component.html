@@ -4,7 +4,7 @@
 
   <ng-template #content>
     <ng-container *ngFor="let p of plugins; let last = last">
-      <div *ngIf="!last" class="main-card" [ngClass]="p.styleClass">
+      <div *ngIf="!last" class="main-card main-card-wrapper" [ngClass]="p.styleClass">
         <div class="content-wrapper">
           <div class="label-large">{{ p.id }}</div>
           <plugin-proxy
@@ -15,7 +15,7 @@
         </div>
       </div>
 
-      <div *ngIf="last" class="main-card" [ngClass]="p.styleClass">
+      <div *ngIf="last" class="main-card main-card-wrapper" [ngClass]="p.styleClass">
         <div class="content-wrapper">
           <div class="label-large">{{ p.id }}</div>
           <plugin-proxy

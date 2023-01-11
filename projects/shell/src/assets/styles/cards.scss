@@ -8,6 +8,10 @@
 
   isolation: isolate;
 
+  &.main-card-wrapper{
+    min-width: fit-content;
+  }
+
   &.small {
     min-height: 80px;
   }

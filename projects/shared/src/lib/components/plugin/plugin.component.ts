@@ -6,6 +6,7 @@ import { BusEvent } from "../../services/event-bus.service"
  * Абстрактный суперкласс плагина
  *
  * @emits loaded - true при завершении инициализации компонента
+ * @emits toBusEvent позволяет передавать события в ШинуСобытий
  * @abstract childNgOnInit - метод для инициализации наследника
  */
 @Component({
@@ -34,6 +35,7 @@ export abstract class PluginComponent implements OnInit {
     }, 0)
   }
 
+  /** Инициализатор для классов, расшираяющих этот компонент*/
   abstract childNgOnInit(): void
 
   /**

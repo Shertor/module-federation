@@ -16,14 +16,6 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "paths": {
-      "@shared": [
-        "projects/shared/src/public-api.ts",
-        "dist/shared"
-      ],
-      "@shared/*": [
-        "projects/shared/src/public-api.ts",
-        "dist/shared"
-      ],
       "@styleguide": [
         "projects/styleguide-lib/src/public-api.ts",
         "dist/styleguide-lib"

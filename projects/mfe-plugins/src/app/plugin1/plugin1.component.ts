@@ -5,7 +5,7 @@ import {
   EventType,
   MfeShellExampleService,
   PluginComponent,
-} from "@shared"
+} from "shared"
 import { BehaviorSubject } from "rxjs"
 
 /**

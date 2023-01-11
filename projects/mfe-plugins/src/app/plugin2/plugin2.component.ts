@@ -1,6 +1,11 @@
 import { CommonModule } from "@angular/common"
-import { Component, EventEmitter, Output } from "@angular/core"
-import { MfeShellExampleService } from "@shared"
+import { Component, OnInit } from "@angular/core"
+import {
+  BusEvent,
+  EventType,
+  MfeShellExampleService,
+  PluginComponent,
+} from "shared"
 import { BehaviorSubject } from "rxjs"
 
 @Component({
@@ -10,16 +15,18 @@ import { BehaviorSubject } from "rxjs"
   templateUrl: "./plugin2.component.html",
   styleUrls: ["./plugin2.component.scss"],
 })
-export class Plugin2Component {
+export class Plugin2Component extends PluginComponent implements OnInit {
   /** Некоторое тестовое значение как пример изменения состояния компонента */
   private someValue$: BehaviorSubject<number> = new BehaviorSubject(0)
+  /** Некоторое значения для шины событий */
+  private _busValue: number = 0
 
-  @Output() loaded = new EventEmitter<boolean>()
+  constructor(public sharedService: MfeShellExampleService) {
+    super()
+  }
 
-  constructor(public sharedService: MfeShellExampleService) {} // Конструктор инжектирует общий сервис как пример
-
-  async ngOnInit() {
-    this.loaded.emit(true)
+  childNgOnInit(): void {
+    // throw new Error("Method not implemented.")
   }
 
   /**
@@ -39,8 +46,18 @@ export class Plugin2Component {
   /**
    * Изменяет значение переменной в общем сервисе
    */
-  onSharedServiceValueBtnPressed() {
+  public onSharedServiceValueBtnPressed() {
     let current = this.sharedService.getValue().getValue()
     this.sharedService.changeValue(current + 1)
+  }
+
+  /**
+   * Эмитет событие в ШинуСобытий
+   */
+  public onEmitEvent() {
+    this._busValue += 1
+    const event: BusEvent = { type: EventType.EVENT_2, payload: this._busValue }
+
+    this.toBusService(event)
   }
 }

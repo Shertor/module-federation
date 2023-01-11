@@ -16,7 +16,7 @@ import {
 import { loadRemoteModule } from "@angular-architects/module-federation"
 import { PluginOptions } from "./plugin"
 import { Subject, Subscription, takeUntil } from "rxjs"
-import { BusEvent } from "@shared"
+import { BusEvent } from "shared"
 
 @Component({
   standalone: true,

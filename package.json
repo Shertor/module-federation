@@ -2,14 +2,9 @@
   "name": "microfrontend",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
     "watch": "ng build --watch --configuration development",
-    "build:shell": "ng build shell",
-    "build:mfe": "ng build mfe-plugins",
-    "build:shared": "ng build shared",
-    "build:clock": "ng build clock",
-    "build": "ng build shell --base-href /shell/ && ng build shared && ng build styleguide-lib && ng build mfe-plugins && ng build mfe-module --base-href /mfe-module/",
+    "pack:shared": "ng build shared && cd dist/shared && npm pack",
+    "build:all": "ng build shell --base-href /shell/ && npm run pack:shared && ng build styleguide-lib && ng build mfe-plugins && ng build mfe-module --base-href /mfe-module/",
     "run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js"
   },
   "private": true,
@@ -24,6 +19,7 @@
     "@angular/platform-browser-dynamic": "^15.0.0",
     "@angular/router": "^15.0.0",
     "rxjs": "~7.5.0",
+    "shared": "file:dist/shared/shared-0.0.1.tgz",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
   },

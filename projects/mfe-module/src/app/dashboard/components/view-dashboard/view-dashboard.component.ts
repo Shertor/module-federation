@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from "@angular/core"
-import { BusEvent, EventBusService } from "@shared"
+import { BusEvent, EventBusService } from "shared"
 import { BehaviorSubject } from "rxjs/internal/BehaviorSubject"
 import { Plugin, PluginState } from "../../utils/plugins/plugins"
 
