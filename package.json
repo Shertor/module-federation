@@ -1,6 +1,6 @@
 {
   "name": "microfrontend",
-  "version": "0.0.0",
+  "version": "2.1.1",
   "scripts": {
     "doc:all": "compodoc -p tsconfig.json -o",
     "watch": "ng build --watch --configuration development",
