@@ -5,6 +5,9 @@
     "@angular/common": "^15.0.0",
     "@angular/core": "^15.0.0"
   },
+  "scripts": {
+    "doc:shared": "compodoc -p tsconfig.lib.json -o"
+  },
   "dependencies": {
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0"

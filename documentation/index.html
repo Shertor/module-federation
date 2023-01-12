@@ -1,0 +1,151 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>microfrontend documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	   <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="./" class="navbar-brand">microfrontend documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<h1 id="microfrontend">Microfrontend</h1>
+<p>This project was generated with <a href="https://github.com/angular/angular-cli">Angular CLI</a> version 15.0.1.</p>
+<h1 id="навигация">Навигация</h1>
+<p>Вся документация и статьи расположены в разделе <code>/wiki/</code></p>
+<ul>
+<li><p><a href="/wiki/0.%20Home.md">Основные положения</a></p>
+</li>
+<li><p><a href="/wiki/1.%20%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0%20%D1%81%20%D0%BD%D1%83%D0%BB%D1%8F.md">Настройка с нуля</a></p>
+</li>
+<li><p><a href="/wiki/2.%20%D0%9F%D0%B5%D1%80%D0%B5%D1%85%D0%BE%D0%B4%20%D0%BD%D0%B0%20%D0%B4%D0%B8%D0%BD%D0%B0%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9%20%D1%80%D0%B5%D0%B6%D0%B8%D0%BC.md">Переход на динамический режим</a></p>
+</li>
+<li><p><a href="/wiki/3.%20%D0%9F%D0%BB%D0%B0%D0%B3%D0%B8%D0%BD%D1%8B.md">Плагины</a></p>
+</li>
+<li><p><a href="/wiki/4.%20Deploy%20%D0%B2%20IIS.md">Deploy в IIS</a></p>
+</li>
+<li><p><a href="/wiki/5.%20%D0%90%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0-v.1.0.0.md">Архитектура</a></p>
+</li>
+<li><p><a href="/wiki/6.%20%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0%20%D0%9F%D0%BB%D0%B0%D0%B3%D0%B8%D0%BD%D0%BE%D0%B2.md">Создание проекта плагинов</a></p>
+</li>
+</ul>
+<p>Проект разделен на основные шаблоны, котороые лежат в <code>/projects/</code></p>
+<ul>
+<li><code>/shell/</code> - основное приложение, в которое встраиваются:<ul>
+<li><code>/shared/</code> - библиотека, в которой должны располагаться общие сервисы и т.п.</li>
+<li><code>/mfe-plugins/</code>- шаблон проекта, содержащий встраиваемые плагины (компоненты)</li>
+<li><code>/clock/</code> - пример встраиваемого модуля</li>
+</ul>
+</li>
+</ul>
+<h1 id="основные-команды-для-динамического-режима">Основные команды для динамического режима</h1>
+<p>Запуск Всех модулей</p>
+<div><pre class="line-numbers"><code class="language-bash">npm run run:all</code></pre></div><p>Создание пустого проекта microfrontend-example</p>
+<div><pre class="line-numbers"><code class="language-bash">npx new microfrontend-example --create-application false --minimal</code></pre></div><p>Создание shell приложения</p>
+<div><pre class="line-numbers"><code class="language-bash">ng generate application shell --routing --style scss
+
+ng add &#64;angular-architects/module-federation --project shell --port 4200 --type dynamic-host</code></pre></div><p>Создание модуля</p>
+<div><pre class="line-numbers"><code class="language-bash">ng generate application mfe-[name] --routing --style scss
+
+ng add &#64;angular-architects/module-federation --project mfe-[name] --port 4201 --type remote</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+
+       <script src="./js/menu-wc.js" defer></script>
+       <script nomodule src="./js/menu-wc_es5.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

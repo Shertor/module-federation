@@ -2,6 +2,7 @@
   "name": "microfrontend",
   "version": "0.0.0",
   "scripts": {
+    "doc:all": "compodoc -p tsconfig.json -o",
     "watch": "ng build --watch --configuration development",
     "pack:shared": "ng build shared && cd dist/shared && npm pack",
     "build:all": "ng build shell --base-href /shell/ && npm run pack:shared && ng build styleguide-lib && ng build mfe-plugins && ng build mfe-module --base-href /mfe-module/",
