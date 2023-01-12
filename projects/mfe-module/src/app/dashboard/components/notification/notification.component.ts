@@ -14,11 +14,15 @@ export class NotificationComponent implements OnInit {
    */
   private _ngUnsubscribe = new Subject<void>()
 
-  private _timeoutId: NodeJS.Timeout | undefined
+  private _showTimeoutId: NodeJS.Timeout | undefined
+
+  private _hideTimeoutId: NodeJS.Timeout | undefined
 
   public state: "show" | "hide" = "hide"
 
   public message: string = "tset messaage"
+
+  private _baseShowDelay: number = 500 //ms
 
   constructor(private _eventBusService: EventBusService) {}
 
@@ -31,19 +35,27 @@ export class NotificationComponent implements OnInit {
 
   /** Функция срабатывающая с таймаутом на событие из шины */
   private onBusEvent(event: BusEvent) {
-    if (this._timeoutId) {
-      clearTimeout(this._timeoutId)
+    let showDelay: number = this._baseShowDelay
+
+    if (this._showTimeoutId) {
+      clearTimeout(this._showTimeoutId)
+
+      if (this.state === "show") {
+        showDelay = 0
+        clearTimeout(this._hideTimeoutId)
+      }
     }
 
-    this._timeoutId = setTimeout(() => {
+    this._showTimeoutId = setTimeout(() => {
       this.message = `${event.sender} : ${event.payload}`
 
       this.state = "show"
 
-      setTimeout(() => {
+      this._hideTimeoutId = setTimeout(() => {
         this.state = "hide"
+        showDelay = this._baseShowDelay
       }, 3000)
-    }, 500)
+    }, showDelay)
   }
 
   /**
