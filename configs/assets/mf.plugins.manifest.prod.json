@@ -1,0 +1,162 @@
+[
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost/mfe-plugins/remoteEntry.js",
+    "exposedModule": "./Plugin1Component",
+
+    "id": "Plugin1",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost/mfe-plugins/remoteEntry.js",
+    "exposedModule": "./Plugin1Component",
+
+    "id": "Plugin2",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost/mfe-plugins/remoteEntry.js",
+    "exposedModule": "./Plugin1Component",
+
+    "id": "Plugin3",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost/mfe-plugins/remoteEntry.js",
+    "exposedModule": "./Plugin1Component",
+
+    "id": "Plugin4",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost/mfe-plugins/remoteEntry.js",
+    "exposedModule": "./Plugin1Component",
+
+    "id": "Plugin5",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost/mfe-plugins/remoteEntry.js",
+    "exposedModule": "./Plugin1Component",
+
+    "id": "Plugin6",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost/mfe-plugins/remoteEntry.js",
+    "exposedModule": "./Plugin1Component",
+
+    "id": "Plugin7",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost/mfe-plugins/remoteEntry.js",
+    "exposedModule": "./Plugin1Component",
+
+    "id": "Plugin8",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost/mfe-plugins/remoteEntry.js",
+    "exposedModule": "./Plugin1Component",
+
+    "id": "Plugin9",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost/mfe-plugins/remoteEntry.js",
+    "exposedModule": "./Plugin1Component",
+
+    "id": "Plugin10",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost/mfe-plugins/remoteEntry.js",
+    "exposedModule": "./Plugin1Component",
+
+    "id": "Plugin11",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost/mfe-plugins/remoteEntry.js",
+    "exposedModule": "./Plugin1Component",
+
+    "id": "Plugin12",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost/mfe-plugins/remoteEntry.js",
+    "exposedModule": "./Plugin1Component",
+
+    "id": "Plugin13",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost/mfe-plugins/remoteEntry.js",
+    "exposedModule": "./Plugin1Component",
+
+    "id": "Plugin14",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost/mfe-plugins/remoteEntry.js",
+    "exposedModule": "./Plugin1Component",
+
+    "id": "Plugin15",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost/mfe-plugins/remoteEntry.js",
+    "exposedModule": "./Plugin1Component",
+
+    "id": "Plugin16",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost/mfe-plugins/remoteEntry.js",
+    "exposedModule": "./Plugin1Component",
+
+    "id": "Plugin17",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost/mfe-plugins/remoteEntry.js",
+    "exposedModule": "./Plugin1Component",
+
+    "id": "Plugin18",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost/mfe-plugins/remoteEntry.js",
+    "exposedModule": "./Plugin1Component",
+
+    "id": "Plugin19",
+    "componentName": "Plugin1Component"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost/mfe-plugins/remoteEntry.js",
+    "exposedModule": "./Plugin1Component",
+
+    "id": "Plugin20",
+    "componentName": "Plugin1Component"
+  }
+]
