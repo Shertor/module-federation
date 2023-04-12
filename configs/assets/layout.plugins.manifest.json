@@ -18,5 +18,9 @@
   {
     "id": "Plugin5",
     "styleClass": "card-1"
+  },
+  {
+    "id": "Plugin6",
+    "styleClass": "card-1"
   }
 ]
