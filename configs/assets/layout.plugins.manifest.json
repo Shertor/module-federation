@@ -1,0 +1,26 @@
+[
+  {
+    "id": "Plugin1",
+    "styleClass": "card-1"
+  },
+  {
+    "id": "Plugin2",
+    "styleClass": "card-1-2"
+  },
+  {
+    "id": "Plugin3",
+    "styleClass": "card-1-2"
+  },
+  {
+    "id": "Plugin4",
+    "styleClass": "card-1"
+  },
+  {
+    "id": "Plugin5",
+    "styleClass": "card-1"
+  },
+  {
+    "id": "Plugin6",
+    "styleClass": "card-1"
+  }
+]

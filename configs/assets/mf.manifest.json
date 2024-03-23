@@ -1,0 +1,9 @@
+{
+  "mfe-module1": {
+    "remoteEntry": "http://localhost/mfe-dashboard-app/remoteEntry.js",
+    "exposedModule": "./Module",
+    "displayName": "Dashboard",
+    "routePath": "dashboard",
+    "ngModuleName": "MfeDashboardModule"
+  }
+}
